@@ -7,7 +7,7 @@ try {
   const fileToScan = core.getInput("server-filename");
   fs.readFile(fileToScan, (err, data) => {
     if (err) throw err;
-    console.log(data);
+    console.log(data.toString("utf-8"));
   });
   const time = new Date().toTimeString();
   core.setOutput("time", time);
