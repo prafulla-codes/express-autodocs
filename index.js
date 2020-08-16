@@ -1,6 +1,5 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
-const axios = require("axios");
 try {
   // `who-to-greet` input defined in action metadata file
   console.log(core.get);
