@@ -6,7 +6,7 @@ try {
   console.log(core.get);
   const fileToScan = core.getInput("server-filename");
   const file = fs.readFile(
-    `${github.context.payload.repository.blobs_url}/master/${fileToScan}`,
+    `${github.context.payload.repository.html_url}/blob/master/${fileToScan}`,
     (err, data) => {
       if (err) throw err;
       console.log(data);
