@@ -5,6 +5,10 @@ inputs:
     description: "The name of the file where backend server runs."
     required: true
     default: "server.js"
+  appname:
+    description: "Name of the app variable"
+    required: true
+    default: "app"
 outputs:
   time: # id of output
     description: "The time the action completed"
