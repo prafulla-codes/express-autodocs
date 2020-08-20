@@ -1,14 +1,18 @@
 name: "Express AutoDocs"
 description: "A github action which automatically generates documentation for your express APIs"
 inputs:
-  server-filename: # id of input
-    description: "The name of the file where backend server runs."
+  server-filepath: # id of input
+    description: "The path of the file where backend server runs."
     required: true
     default: "server.js"
   appname:
     description: "Name of the app variable"
     required: true
     default: "app"
+  routername:
+    description: "Name of the router variable"
+    required: true
+    default: "router"
 outputs:
   time: # id of output
     description: "The time the action completed"
