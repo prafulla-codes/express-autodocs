@@ -32,12 +32,10 @@ function getAllAPICalls(filepath, appname) {
 
       // Step 3 :- Scanned All APIs
       const successBadge = badge("APIs Scanned", ` ${apis.length} `, {
-        messageBg: "white",
+        messageBg: "green",
         messageColor: "black",
-        messageStyle: "bold",
-        labelColor: "white",
-        labelStyle: "bold",
-        labelBg: "blue",
+        labelColor: "black",
+        labelBg: "white",
       });
       console.log(
         "\x1b[32m",
