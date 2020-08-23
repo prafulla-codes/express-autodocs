@@ -28,6 +28,9 @@ app.use("/api/auth", require("./routes/api/auth"));
 app.get("/sayHello", (req, res) => {
   res.send("Hello");
 });
+app.delete("/delete", (req, res) => {
+  res.send("Poof, your app is deleted!");
+});
 // Serve Static Assets if in production
 if (process.env.NODE_ENV == "production") {
   // Set a static folder
@@ -37,6 +40,11 @@ if (process.env.NODE_ENV == "production") {
   });
 
   app.post("/users", auth, function (req, res) {
+    /*
+    @description - This API will add a new user to the database!
+    IDK how its gonna do it tho :c
+    @label - Private
+  */
     res.send("User Created");
   });
 }

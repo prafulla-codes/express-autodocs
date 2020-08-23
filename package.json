@@ -25,6 +25,7 @@
     "@actions/core": "^1.2.4",
     "@actions/github": "^4.0.0",
     "axios": "^0.19.2",
+    "cli-badges": "^1.0.0",
     "express": "^4.17.1"
   }
 }
