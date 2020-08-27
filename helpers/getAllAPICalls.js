@@ -23,7 +23,7 @@ function getAllAPICalls(filepath, appname) {
         baseAPIMatchStartPositions.push(match.index);
       for (let index of baseAPIMatchStartPositions) {
         let api = getAPI(file.substr(index));
-        let demestified_api = demestifyAPI(api);
+        let demestified_api = demestifyAPI(api, index, file);
         apis.push(demestified_api);
       }
 
