@@ -2,8 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const config = require("config");
-const { delete } = require("./routes/api/items");
-
+const queries = require("./routes/api/queries");
 const app = express();
 
 // Body Parser Middleware
@@ -26,10 +25,10 @@ app.use(express.json());
 app.use("/api/items", require("./routes/api/items"));
 app.use("/api/users", require("./routes/api/users"));
 app.use("/api/auth", require("./routes/api/auth"));
+app.use("/api/queries", auth, queries);
 app.get("/sayHello", (req, res) => {
   res.send("Hello");
 });
-app.delete("/delete", delete);
 // Serve Static Assets if in production
 if (process.env.NODE_ENV == "production") {
   // Set a static folder
@@ -40,10 +39,14 @@ if (process.env.NODE_ENV == "production") {
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
-    /*
+  /*
     {
       "description":"Creates a new user",
-      "label":"Private"
+      "label":"Private",
+      "inputs":{
+        "name":"The username by which he/she logs in",
+        "password": "A string password"
+      }
     }
   */
   app.post("/users", auth, function (req, res) {

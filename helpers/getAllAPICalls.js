@@ -1,17 +1,25 @@
 const fs = require("fs");
 const express = require("express");
-const getAPI = require("./getAPI");
+const getAPI = require("./getFullCall");
 const { match } = require("assert");
 const { all } = require("../test/routes/api/items");
 const { badge } = require("cli-badges");
 const demestifyAPI = require("./demestifyAPI");
+const getFullCall = require("./getFullCall");
+const getCallsFromRoute = require("./getCallsFromRoute");
 function getAllAPICalls(filepath, appname) {
   const apis = [];
   try {
     // Read The Base File
     fs.readFile(filepath, (err, data) => {
       if (err) throw err;
-      console.log("\x1b[32m", "\x1b[33m", "🔎 Scanning for APIs...", "\x1b[0m");
+      console.log(
+        "\x1b[1m",
+        "\x1b[33m",
+        "🔎 Scanning for Base Level APIs...",
+        "\x1b[0m"
+      );
+
       const file = data.toString(); // Converts the file to readable string
       // Step 1 :- Scan Base Level Requests
       let match,
@@ -22,21 +30,21 @@ function getAllAPICalls(filepath, appname) {
       while ((match = baseLevelAPIRegex.exec(file)))
         baseAPIMatchStartPositions.push(match.index);
       for (let index of baseAPIMatchStartPositions) {
-        let api = getAPI(file.substr(index));
+        let api = getFullCall(file.substr(index));
         let demestified_api = demestifyAPI(api, index, file);
         apis.push(demestified_api);
       }
-
-      // Step 2 :- Scan API Routes
-      const apiRoutes = file.match(/app\.(use)\(['"`][\/*].*/g);
-
-      // Step 3 :- Scanned All APIs
-      const successBadge = badge("APIs Scanned", ` ${apis.length} `, {
-        messageBg: "green",
-        messageColor: "black",
-        labelColor: "black",
-        labelBg: "white",
-      });
+      // * Base Level Scan Badge Message
+      const successBadge = badge(
+        "Base Level APIs Scanned",
+        ` ${apis.length} `,
+        {
+          messageBg: "green",
+          messageColor: "black",
+          labelColor: "black",
+          labelBg: "white",
+        }
+      );
       console.log(
         "\x1b[32m",
         "\x1b[1m",
@@ -45,6 +53,45 @@ function getAllAPICalls(filepath, appname) {
         " - ",
         successBadge
       );
+      // ! End Of Base Level Scan Bade Message
+      // Step 2 :- Scan API Routes
+      console.log(
+        "\x1b[1m",
+        "\x1b[33m",
+        "🔎 Scanning for Routes...",
+        "\x1b[0m"
+      );
+      let routeMatchs,
+        routesMatchStartPositions = [];
+      const routeRegex = new RegExp(/app\.(use)\(['"`][\/*].*/, "g");
+      while ((routeMatchs = routeRegex.exec(file)))
+        routesMatchStartPositions.push(routeMatchs.index);
+
+      const routesScannedBadge = badge(
+        "Routes Scanned",
+        ` ${routesMatchStartPositions.length} `,
+        {
+          messageBg: "green",
+          messageColor: "black",
+          labelColor: "black",
+          labelBg: "white",
+        }
+      );
+      console.log(
+        "\x1b[32m",
+        "\x1b[1m",
+        "🆗 Scan Complete",
+        "\x1b[0m",
+        " - ",
+        routesScannedBadge
+      );
+
+      for (let index of routesMatchStartPositions) {
+        let route = getFullCall(file.substr(index));
+        let calls = getCallsFromRoute(route, file, filepath);
+      }
+
+      // Step 3 :- Scanned All APIs
     });
   } catch (err) {
     throw err;

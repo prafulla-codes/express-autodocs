@@ -1,16 +1,15 @@
 const vm = require("vm");
 function demestifyAPI(api, index, file) {
-  console.log(api);
   let METHOD = api.split(".")[1].split("(")[0];
   let trimmedCall = api.match(/\(.[\s\S]*/g)[0];
   trimmedCall = trimmedCall.substring(1, trimmedCall.length - 1);
   let CALL = trimmedCall.split(",")[0];
   CALL = CALL.substring(1, CALL.length - 1);
   let params = getCustomParams(index, file);
-  console.log(params);
   return {
     method: METHOD,
     callName: CALL,
+    params,
   };
 }
 

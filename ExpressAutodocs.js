@@ -1,6 +1,5 @@
 const fs = require("fs");
 const express = require("express");
-const scanBaseFile = require("./helpers/getAllAPICalls");
 const getAllAPICalls = require("./helpers/getAllAPICalls");
 class ExpressAutodocs {
   static generateDocs(filepath, appname) {

@@ -1,4 +1,4 @@
-function getAPI(match) {
+function getFullCall(match) {
   let api = "";
   let parenthesisCount = 0;
   let initializedParenthesisCounting = false;
@@ -19,4 +19,4 @@ function getAPI(match) {
   }
   return null;
 }
-module.exports = getAPI;
+module.exports = getFullCall;
