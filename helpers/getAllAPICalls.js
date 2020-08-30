@@ -7,7 +7,7 @@ const { badge } = require("cli-badges");
 const demestifyAPI = require("./demestifyAPI");
 const getFullCall = require("./getFullCall");
 const getCallsFromRoute = require("./getCallsFromRoute");
-function getAllAPICalls(filepath, appname) {
+function getAllAPICalls(filepath, appname, routername) {
   const apis = [];
   try {
     // Read The Base File
@@ -55,12 +55,7 @@ function getAllAPICalls(filepath, appname) {
       );
       // ! End Of Base Level Scan Bade Message
       // Step 2 :- Scan API Routes
-      console.log(
-        "\x1b[1m",
-        "\x1b[33m",
-        "🔎 Scanning for Routes...",
-        "\x1b[0m"
-      );
+      console.log("\x1b[1m", "\x1b[33m", "🔎 Detecting Routes...", "\x1b[0m");
       let routeMatchs,
         routesMatchStartPositions = [];
       const routeRegex = new RegExp(/app\.(use)\(['"`][\/*].*/, "g");
@@ -68,7 +63,7 @@ function getAllAPICalls(filepath, appname) {
         routesMatchStartPositions.push(routeMatchs.index);
 
       const routesScannedBadge = badge(
-        "Routes Scanned",
+        "Routes Detected",
         ` ${routesMatchStartPositions.length} `,
         {
           messageBg: "green",
@@ -86,9 +81,16 @@ function getAllAPICalls(filepath, appname) {
         routesScannedBadge
       );
 
+      console.log(
+        "\x1b[1m",
+        "\x1b[33m",
+        "🔎 Scanning Routes For API Calls...",
+        "\x1b[0m"
+      );
+
       for (let index of routesMatchStartPositions) {
         let route = getFullCall(file.substr(index));
-        let calls = getCallsFromRoute(route, file, filepath);
+        let calls = getCallsFromRoute(route, file, filepath, routername);
       }
 
       // Step 3 :- Scanned All APIs

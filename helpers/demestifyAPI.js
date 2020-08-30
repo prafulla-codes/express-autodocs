@@ -1,5 +1,5 @@
 const vm = require("vm");
-function demestifyAPI(api, index, file) {
+function demestifyAPI(api, index, file, routeprefix = "") {
   let METHOD = api.split(".")[1].split("(")[0];
   let trimmedCall = api.match(/\(.[\s\S]*/g)[0];
   trimmedCall = trimmedCall.substring(1, trimmedCall.length - 1);
@@ -8,7 +8,7 @@ function demestifyAPI(api, index, file) {
   let params = getCustomParams(index, file);
   return {
     method: METHOD,
-    callName: CALL,
+    callName: routeprefix + CALL,
     params,
   };
 }

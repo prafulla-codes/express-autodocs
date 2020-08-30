@@ -1,11 +1,35 @@
 const vm = require("vm");
 const fs = require("fs");
 const path = require("path");
+const getFileFromRequire = require("./getFileHelpers/getFileFromRequire");
+const getFileFromVariableRoute = require("./getFileHelpers/getFileFromVariableRoute");
 const getFullCall = require("./getFullCall");
-function getCallsFromRoute(route, basefile, basefilePath) {
+const demestifyAPI = require("./demestifyAPI");
+
+function getCallsFromRoute(route, basefile, basefilePath, routername) {
   // Gets The Route File
   let routeFile = getRouteFile(route, basefile, basefilePath);
-  if (routeFile) console.log(routeFile);
+  let apis = [];
+  if (!routeFile) return null;
+  let match,
+    routeAPIMatchStartPositions = [];
+  const routeLevelAPIRegexString = `${routername}.(get|post|delete|patch|put).*`;
+  const routeLevelAPIRegex = new RegExp(routeLevelAPIRegexString, "g");
+  let routeName = getRouteName(route);
+  while ((match = routeLevelAPIRegex.exec(routeFile)))
+    routeAPIMatchStartPositions.push(match.index);
+  for (let index of routeAPIMatchStartPositions) {
+    let api = getFullCall(routeFile.substr(index));
+    let demestified_api = demestifyAPI(api, index, routeFile, routeName);
+    apis.push(demestified_api);
+  }
+  console.log(apis);
+}
+
+function getRouteName(route) {
+  let routeName = route.split(",")[0].split("(")[1];
+  routeName = routeName.substring(1, routeName.length - 1);
+  return routeName;
 }
 
 function getRouteFile(route, basefile, filePath) {
@@ -15,30 +39,11 @@ function getRouteFile(route, basefile, filePath) {
   let routeParams = [...trimmedRoute.split(",")];
   let lastParam = routeParams[routeParams.length - 1];
   if (lastParam.includes("require")) {
-    let file = getFileFromRequire(lastParam, filePath);
+    let file = getFileFromRequire(lastParam.trim(), filePath);
     return file;
   } else {
-  }
-}
-
-function getFileFromRequire(lastParam, filePath) {
-  let relativePath = lastParam.split("(")[1];
-  relativePath = relativePath.substring(1, relativePath.length - 2) + ".js";
-  try {
-    let file = fs.readFileSync(
-      path.join(path.dirname(filePath), relativePath),
-      "utf-8"
-    );
+    let file = getFileFromVariableRoute(lastParam.trim(), basefile, filePath);
     return file;
-  } catch (err) {
-    console.log(
-      "\x1b[1m",
-      "\x1b[31m",
-      `⏩ Skipping Route ${relativePath} (Failed To Read File)`,
-      "\x1b[0m"
-    );
-
-    return null;
   }
 }
 

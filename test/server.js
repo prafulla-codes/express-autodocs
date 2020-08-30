@@ -2,9 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const config = require("config");
-const queries = require("./routes/api/queries");
+var queries = require("./routes/api/queries");
 const app = express();
-
 // Body Parser Middleware
 app.use(express.json());
 
@@ -26,6 +25,7 @@ app.use("/api/items", require("./routes/api/items"));
 app.use("/api/users", require("./routes/api/users"));
 app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/queries", auth, queries);
+app.use("/api/posts", require("./routes/api/posts"));
 app.get("/sayHello", (req, res) => {
   res.send("Hello");
 });
