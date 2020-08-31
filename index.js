@@ -7,13 +7,14 @@ if (process.env.NODE_ENV == "production") {
   const routerName = core.getInput("routerName");
   const outputFormat = core.getInput("outputFormat");
   const outputBranch = core.getInput("outputBranch");
-
+  const token = core.getInput("token");
   ExpressAutodocs.generateDocs(
     filePath,
     appName,
     routerName,
     outputFormat,
-    outputBranch
+    outputBranch,
+    token
   );
 } else {
   ExpressAutodocs.generateDocs(

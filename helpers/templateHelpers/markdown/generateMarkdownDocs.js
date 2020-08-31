@@ -1,9 +1,11 @@
 const createIndex = require("./createIndex");
 const exec = require("@actions/exec");
 const fs = require("fs");
+const github = require("@actions/github");
 const getBaseAPIContent = require("./getBaseAPIContent");
 const generatePages = require("./generatePages");
-async function generateMarkdowndocs(apis, outputBranch) {
+async function generateMarkdowndocs(apis, outputBranch, token) {
+  const octokit = github.getOctokit(token);
   if (process.env.NODE_ENV == "production") {
     await exec.exec(`git stash`);
     await exec.exec(`git checkout -B ${outputBranch}`);
@@ -29,7 +31,10 @@ async function generateMarkdowndocs(apis, outputBranch) {
   fs.closeSync(fd);
   if (process.env.NODE_ENV == "production") {
     await exec.exec(`git add .`);
-    await exec.exec(`git commit -m "Created Docs"`);
+    let commit = octokit.git.createCommit({
+      message: "Created Docs",
+    });
+
     await exec.exec(`git push origin ${outputBranch}`);
     await exec.exec(`git checkout master`);
   }
