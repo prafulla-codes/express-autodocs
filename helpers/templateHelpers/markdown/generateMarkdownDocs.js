@@ -1,8 +1,9 @@
 const createIndex = require("./createIndex");
+const exec = require("@actions/exec");
 const fs = require("fs");
 const getBaseAPIContent = require("./getBaseAPIContent");
 const generatePages = require("./generatePages");
-function generateMarkdowndocs(apis) {
+function generateMarkdowndocs(apis, outputBranch) {
   let output_path;
   if (process.env.NODE_ENV == "production") {
     output_path = process.cwd() + "/docs";
@@ -21,6 +22,9 @@ function generateMarkdowndocs(apis) {
   if (baseContent) indexPage += baseContent;
   fs.writeFileSync(output_file, indexPage);
   fs.closeSync(fd);
+  exec.exec(`git add .`);
+  exec.exec(`git commit -m 'Created Docs'`);
+  exec.exec(`git push origin ${outputBranch}`);
 }
 
 module.exports = generateMarkdowndocs;
