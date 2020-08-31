@@ -3,9 +3,9 @@ const exec = require("@actions/exec");
 const fs = require("fs");
 const getBaseAPIContent = require("./getBaseAPIContent");
 const generatePages = require("./generatePages");
-function generateMarkdowndocs(apis, outputBranch) {
+async function generateMarkdowndocs(apis, outputBranch) {
   if (process.env.NODE_ENV == "production") {
-    exec.exec(`git rm -rf`);
+    await exec.exec(`git rm -rf`);
   }
   let output_path;
   if (process.env.NODE_ENV == "production") {
