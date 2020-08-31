@@ -1,9 +1,6 @@
 name: "Express AutoDocs"
 description: "A github action which automatically generates documentation for your express APIs"
 inputs:
-  token:
-    description: "Github Authentication Token"
-    required: true
   server-filepath: # id of input
     description: "The path of the file where backend server runs."
     required: true

@@ -7,7 +7,8 @@ if (process.env.NODE_ENV == "production") {
   const routerName = core.getInput("routerName");
   const outputFormat = core.getInput("outputFormat");
   const outputBranch = core.getInput("outputBranch");
-  const token = core.getInput("token");
+  const token = process.env.GITHUB_TOKEN;
+  console.log("GIthub Token is " + token);
   ExpressAutodocs.generateDocs(
     filePath,
     appName,
