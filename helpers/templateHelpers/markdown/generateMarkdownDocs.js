@@ -27,7 +27,7 @@ async function generateMarkdowndocs(apis, outputBranch) {
   fs.closeSync(fd);
   if (process.env.NODE_ENV == "production") {
     await exec.exec(`git add .`);
-    await exec.exec(`git commit -m 'Created Docs'`);
+    await exec.exec(`git commit -m "Created Docs"`);
     await exec.exec(`git push origin ${outputBranch}`);
     await exec.exec(`git checkout master`);
   }
