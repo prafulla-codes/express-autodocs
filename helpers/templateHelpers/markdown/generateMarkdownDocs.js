@@ -5,7 +5,7 @@ const getBaseAPIContent = require("./getBaseAPIContent");
 const generatePages = require("./generatePages");
 async function generateMarkdowndocs(apis, outputBranch) {
   if (process.env.NODE_ENV == "production") {
-    await exec.exec(`git rm -rf`);
+    await exec.exec(`git rm -rf .`);
   }
   let output_path;
   if (process.env.NODE_ENV == "production") {
@@ -26,30 +26,10 @@ async function generateMarkdowndocs(apis, outputBranch) {
   fs.writeFileSync(output_file, indexPage);
   fs.closeSync(fd);
   if (process.env.NODE_ENV == "production") {
-    exec
-      .exec(`git add .`)
-      .then(() => {
-        exec
-          .exec(`git commit -m 'Created Docs'`)
-          .then(() => {
-            exec.exec(`git push origin ${outputBranch}`).then(() => {
-              exec
-                .exec(`git checkout master`)
-                .then(() => {
-                  console.log("DONE");
-                })
-                .catch((err) => {
-                  throw err;
-                });
-            });
-          })
-          .catch((err) => {
-            throw err;
-          });
-      })
-      .catch((err) => {
-        throw err;
-      });
+    await exec.exec(`git add .`);
+    await exec.exec(`git commit -m 'Created Docs'`);
+    await exec.exec(`git push origin ${outputBranch}`);
+    await exec.exec(`git checkout master`);
   }
 }
 
