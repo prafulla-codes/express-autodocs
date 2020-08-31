@@ -5,7 +5,7 @@ const github = require("@actions/github");
 const getBaseAPIContent = require("./getBaseAPIContent");
 const generatePages = require("./generatePages");
 async function generateMarkdowndocs(apis, outputBranch, token) {
-  const octokit = github.getOctokit(token);
+  const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
   if (process.env.NODE_ENV == "production") {
     await exec.exec(`git stash`);
     await exec.exec(`git checkout -B ${outputBranch}`);
@@ -30,7 +30,7 @@ async function generateMarkdowndocs(apis, outputBranch, token) {
   fs.writeFileSync(output_file, indexPage);
   fs.closeSync(fd);
   if (process.env.NODE_ENV == "production") {
-    await exec.exec(`git add .`);
+    await exec.exec(`git add docs`);
     let commit = octokit.git.createCommit({
       message: "Created Docs",
     });
