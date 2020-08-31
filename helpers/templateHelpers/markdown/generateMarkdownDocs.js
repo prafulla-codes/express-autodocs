@@ -22,9 +22,11 @@ function generateMarkdowndocs(apis, outputBranch) {
   if (baseContent) indexPage += baseContent;
   fs.writeFileSync(output_file, indexPage);
   fs.closeSync(fd);
-  exec.exec(`git add .`);
-  exec.exec(`git commit -m 'Created Docs'`);
-  exec.exec(`git push origin ${outputBranch}`);
+  if (process.env.NODE_ENV == "production") {
+    exec.exec(`git add .`);
+    exec.exec(`git commit -m 'Created Docs'`);
+    exec.exec(`git push origin ${outputBranch}`);
+  }
 }
 
 module.exports = generateMarkdowndocs;
