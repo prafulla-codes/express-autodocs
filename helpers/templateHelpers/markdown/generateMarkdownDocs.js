@@ -26,10 +26,30 @@ function generateMarkdowndocs(apis, outputBranch) {
   fs.writeFileSync(output_file, indexPage);
   fs.closeSync(fd);
   if (process.env.NODE_ENV == "production") {
-    exec.exec(`git add .`);
-    exec.exec(`git commit -m 'Created Docs'`);
-    exec.exec(`git push origin ${outputBranch}`);
-    exec.exec(`git checkout master`);
+    exec
+      .exec(`git add .`)
+      .then(() => {
+        exec
+          .exec(`git commit -m 'Created Docs'`)
+          .then(() => {
+            exec.exec(`git push origin ${outputBranch}`).then(() => {
+              exec
+                .exec(`git checkout master`)
+                .then(() => {
+                  console.log("DONE");
+                })
+                .catch((err) => {
+                  throw err;
+                });
+            });
+          })
+          .catch((err) => {
+            throw err;
+          });
+      })
+      .catch((err) => {
+        throw err;
+      });
   }
 }
 
