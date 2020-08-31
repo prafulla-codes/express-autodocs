@@ -5,6 +5,8 @@ const getBaseAPIContent = require("./getBaseAPIContent");
 const generatePages = require("./generatePages");
 async function generateMarkdowndocs(apis, outputBranch) {
   if (process.env.NODE_ENV == "production") {
+    await exec.exec(`git stash`);
+    await exec.exec(`git checkout -B ${outputBranch}`);
     await exec.exec(`git rm -rf .`);
   }
   let output_path;
