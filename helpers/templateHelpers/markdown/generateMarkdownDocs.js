@@ -29,6 +29,7 @@ function generateMarkdowndocs(apis, outputBranch) {
     exec.exec(`git add .`);
     exec.exec(`git commit -m 'Created Docs'`);
     exec.exec(`git push origin ${outputBranch}`);
+    exec.exec(`git checkout master`);
   }
 }
 
