@@ -13,6 +13,14 @@ inputs:
     description: "Name of the router variable"
     required: true
     default: "router"
+  outputFormat:
+    description: "Static assets are generated in this format"
+    required: true
+    default: "markdown"
+  outputBranch:
+    description: "Static assets are deployed in this branch"
+    required: true
+    default: "express-autodocs"
 outputs:
   time: # id of output
     description: "The time the action completed"
