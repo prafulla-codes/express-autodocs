@@ -23,7 +23,7 @@ function getCallsFromRoute(route, basefile, basefilePath, routername) {
     let demestified_api = demestifyAPI(api, index, routeFile, routeName);
     apis.push(demestified_api);
   }
-  return { isRoute: true, apis: apis };
+  return { isRoute: true, apis: apis, routeName: routeName };
 }
 
 function getRouteName(route) {
