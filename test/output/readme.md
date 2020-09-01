@@ -4,7 +4,9 @@
 1. [/sayHello](#sayHello) - GET
 2. [*](#) - GET
 3. [/users](#users) - POST
-  null
+  ### Categorized APIs
+  1. [/api/items](pages/api-items)
+        
     
 ## APIs
 ---

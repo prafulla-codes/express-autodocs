@@ -84,7 +84,7 @@ function getAllAPICalls(filepath, appname, routername) {
     for (let index of routesMatchStartPositions) {
       let route = getFullCall(file.substr(index));
       let calls = getCallsFromRoute(route, file, filepath, routername);
-      apis.push(calls);
+      if (calls) apis.push(calls);
     }
     return apis;
   } catch (err) {
