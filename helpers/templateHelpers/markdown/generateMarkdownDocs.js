@@ -23,7 +23,7 @@ async function generateMarkdowndocs(apis, outputBranch, token) {
   let output_file = output_path + "/readme.md";
   let index = createIndex(apis);
   let baseContent = getBaseAPIContent(apis);
-  await generatePages(apis);
+  generatePages(apis);
   const fd = fs.openSync(output_file, "w");
   let indexPage = ``;
   if (index) indexPage += index;

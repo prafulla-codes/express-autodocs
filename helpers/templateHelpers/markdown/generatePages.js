@@ -1,8 +1,8 @@
 const getBaseAPIContent = require("./getBaseAPIContent");
 const createIndex = require("./createIndex");
-const exec = require("@actions/exec");
 const fs = require("fs");
-async function generatePages(apis) {
+function generatePages(apis) {
+  console.log(apis);
   let output_path;
   if (process.env.NODE_ENV == "production") {
     output_path = `${process.cwd()}/docs/pages`;
@@ -33,8 +33,6 @@ async function generatePages(apis) {
       `
       );
       fs.closeSync(fd);
-
-      await exec.exec(`git add ${output_file}`);
     }
   }
 }
