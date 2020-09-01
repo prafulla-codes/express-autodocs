@@ -1,6 +1,5 @@
 const createIndex = require("./createIndex");
 const core = require("@actions/core");
-const exec = require("@actions/exec");
 const util = require("util");
 const exec = util.promisify(require("child_process").exec);
 const fs = require("fs");
