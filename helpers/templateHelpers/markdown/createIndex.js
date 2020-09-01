@@ -11,8 +11,8 @@ function createIndex(apis) {
       pages += `
   ${pagesCount}. [${api.routeName}](pages/${api.routeName
         .substring(1)
-        .replace("/", "-")})
-        `;
+        .replace("/", "-")}.md)
+  `;
     } else {
       baseAPICount += 1;
       baseAPIs += `

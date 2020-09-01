@@ -5,8 +5,8 @@
 2. [*](#) - GET
 3. [/users](#users) - POST
   ### Categorized APIs
-  1. [/api/items](pages/api-items)
-        
+  1. [/api/items](pages/api-items.md)
+  
     
 ## APIs
 ---
