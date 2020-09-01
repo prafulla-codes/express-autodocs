@@ -37,13 +37,8 @@ async function generateMarkdowndocs(apis, outputBranch, token) {
     //   owner: context.repo.owner,
     //   repo: context.repo.repo,
     // });
-    // let commit = octokit.git.createCommit({
-    //   message: "Created Docs",
-    // });
-    await exec.exec(`git config user.email bot@expressautodocs.org
-    git config user.name express-autodocs-bot`);
-    await exec.exec(`git push origin ${outputBranch}`);
-
+    await exec.exec(`git config --global user.name 'Express AutoDocs'`);
+    await exec.exec(`git config --global user.email 'bot@expressautodocs.xyz'`);
     await exec.exec(`git push origin ${outputBranch}`);
     await exec.exec(`git checkout master`);
   }
