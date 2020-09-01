@@ -81,12 +81,11 @@ function getAllAPICalls(filepath, appname, routername) {
       "🔎 Scanning Routes For API Calls...",
       "\x1b[0m"
     );
-
     for (let index of routesMatchStartPositions) {
       let route = getFullCall(file.substr(index));
       let calls = getCallsFromRoute(route, file, filepath, routername);
+      apis.push(calls);
     }
-
     return apis;
   } catch (err) {
     throw err;
