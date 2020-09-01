@@ -38,6 +38,7 @@ async function generateMarkdowndocs(apis, outputBranch, token) {
     // });
     await exec.exec(`git config --global user.name 'Express AutoDocs'`);
     await exec.exec(`git config --global user.email 'bot@expressautodocs.xyz'`);
+    await exec.exec(`git commit -a 'Created Docs'`);
     await exec.exec(`git push origin ${outputBranch}`);
   }
 }
