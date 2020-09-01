@@ -1,16 +1,39 @@
 const createIndex = require("./createIndex");
+const core = require("@actions/core");
 const exec = require("@actions/exec");
+const util = require("util");
+const exec = util.promisify(require("child_process").exec);
 const fs = require("fs");
-const github = require("@actions/github");
 const getBaseAPIContent = require("./getBaseAPIContent");
 const generatePages = require("./generatePages");
 async function generateMarkdowndocs(apis, outputBranch, token) {
   if (process.env.NODE_ENV == "production") {
-    await exec.exec(`git config --global user.name 'express-autodocs'`);
-    await exec.exec(`git config --global user.email 'bot@expressautodocs.xyz'`);
-    await exec.exec(`git stash`);
-    await exec.exec(`git checkout -B ${outputBranch}`);
-    await exec.exec(`git rm -rf .`);
+    console.log(
+      "\x1b[36m",
+      "\x1b[1m",
+      `ℹ️ Setting up output branch ${outputBranch} ...`,
+      "\x1b[0m"
+    );
+
+    const setupFreshBranch = `
+    git stash 
+    git config --global user.name 'express-autodocs'
+    git config --global user.email 'bot@expressautodocs.xyz'
+    git checkout -B ${outputBranch}
+    git rm -rf .
+    `;
+    try {
+      const { stderr } = await exec(setupFreshBranch);
+      if (stderr) console.log(stderr);
+      console.log(
+        "\x1b[36m",
+        "\x1b[1m",
+        `🆗 Branch Setup Successful`,
+        "\x1b[0m"
+      );
+    } catch (err) {
+      core.setFailed(err.message);
+    }
   }
   let output_path;
   if (process.env.NODE_ENV == "production") {
@@ -31,9 +54,30 @@ async function generateMarkdowndocs(apis, outputBranch, token) {
   fs.writeFileSync(output_file, indexPage);
   fs.closeSync(fd);
   if (process.env.NODE_ENV == "production") {
-    await exec.exec(`git add docs`);
-    await exec.exec(`git commit -m "Created Docs" -a`);
-    await exec.exec(`git push origin ${outputBranch}`);
+    console.log(
+      "\x1b[36m",
+      "\x1b[1m",
+      `🚀 Deplying to ${outputBranch} ...`,
+      "\x1b[0m"
+    );
+    const deploy = `
+    git add docs
+    git commit -m "Created Docs" -a
+    git config --global user.email 'bot@expressautodocs.xyz'
+    git push origin ${outputBranch} --force
+    `;
+    try {
+      const { stderr } = await exec(deploy);
+      if (stderr) console.log(stderr);
+      console.log(
+        "\x1b[36m",
+        "\x1b[1m",
+        `🎉 Docs created. Checkout ${outputBranch} branch.`,
+        "\x1b[0m"
+      );
+    } catch (err) {
+      core.setFailed(err.message);
+    }
   }
 }
 
