@@ -8,8 +8,11 @@ async function generateMarkdowndocs(apis, outputBranch, token) {
   const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
   let context = github.context;
   if (process.env.NODE_ENV == "production") {
+    await exec.exec(`git config --global user.name 'express-autodocs'`);
+    await exec.exec(`git config --global user.email 'bot@expressautodocs.xyz'`);
     await exec.exec(`git stash`);
     await exec.exec(`git checkout -B ${outputBranch}`);
+    await exec.exec(`git rm -rf .`);
   }
   let output_path;
   if (process.env.NODE_ENV == "production") {
@@ -22,7 +25,7 @@ async function generateMarkdowndocs(apis, outputBranch, token) {
   let output_file = output_path + "/readme.md";
   let index = createIndex(apis);
   let baseContent = getBaseAPIContent(apis);
-  generatePages(apis);
+  await generatePages(apis);
   const fd = fs.openSync(output_file, "w");
   let indexPage = ``;
   if (index) indexPage += index;
@@ -31,13 +34,6 @@ async function generateMarkdowndocs(apis, outputBranch, token) {
   fs.closeSync(fd);
   if (process.env.NODE_ENV == "production") {
     await exec.exec(`git add docs`);
-
-    // let tree = octokit.git.createTree({
-    //   owner: context.repo.owner,
-    //   repo: context.repo.repo,
-    // });
-    await exec.exec(`git config --global user.name 'Express AutoDocs'`);
-    await exec.exec(`git config --global user.email 'bot@expressautodocs.xyz'`);
     await exec.exec(`git commit -m "Created Docs" -a`);
     await exec.exec(`git push origin ${outputBranch}`);
   }
