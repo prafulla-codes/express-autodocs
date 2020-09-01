@@ -16,6 +16,12 @@ async function generatePages(apis) {
       let output_file = `${output_path}/${api.routeName
         .substring(1)
         .replace("/", "-")}.md`;
+      console.log(
+        "\x1b[36m",
+        "\x1b[1m",
+        `📝 Creating ${output_file}`,
+        "\x1b[0m"
+      );
       let index = createIndex(api.apis);
       let pageBody = getBaseAPIContent(api.apis);
       let fd = fs.openSync(output_file, "w");
@@ -27,6 +33,7 @@ async function generatePages(apis) {
       `
       );
       fs.closeSync(fd);
+
       await exec.exec(`git add ${output_file}`);
     }
   }

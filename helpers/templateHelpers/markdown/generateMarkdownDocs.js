@@ -5,8 +5,6 @@ const github = require("@actions/github");
 const getBaseAPIContent = require("./getBaseAPIContent");
 const generatePages = require("./generatePages");
 async function generateMarkdowndocs(apis, outputBranch, token) {
-  const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
-  let context = github.context;
   if (process.env.NODE_ENV == "production") {
     await exec.exec(`git config --global user.name 'express-autodocs'`);
     await exec.exec(`git config --global user.email 'bot@expressautodocs.xyz'`);
