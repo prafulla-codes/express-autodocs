@@ -65,6 +65,10 @@ Following are the parameters which you can modify to make this action suitable f
 
 <br>
 
+# ⏱️ Changelog
+
+Check the [CHANGELOG.md](CHANGELOG.md) to view the changes done to this action over time
+
 # ⭐ Contribute
 
 Contributions to this action are most welcomed. please check the [Contributions Guide](CONTRIBUTING.md) for more details.
