@@ -1,7 +1,7 @@
-function createIndex(apis) {
+function createPageIndex(apis) {
   let baseAPICount = 0;
   let pagesCount = 0;
-  let baseAPIs = `### APIs `;
+  let baseAPIs = ``;
   let hasRoutes = false;
   let pages = `### Categorized APIs`;
   for (let api of apis) {
@@ -9,25 +9,23 @@ function createIndex(apis) {
       hasRoutes = true;
       pagesCount += 1;
       pages += `
-  ${pagesCount}. [${api.routeName}](pages/${api.routeName
+    ${pagesCount}. [${api.routeName}](pages/${api.routeName
         .substring(1)
         .replace("/", "-")}.md)
-  `;
+    `;
     } else {
       baseAPICount += 1;
       baseAPIs += `
-${baseAPICount}. [${api.callName}](#${api.callName
+  ${baseAPICount}. [${api.callName}](#${api.callName
         .substring(1)
         .replace("/", "-")}) - ${api.method.toUpperCase()}`;
     }
   }
 
   return `
-  ---
-  ## Table of Content
-  ${baseAPIs}
-  ${hasRoutes ? pages : null}
-  ---`;
+    ${baseAPIs}
+    ${hasRoutes ? pages : null}
+      `;
 }
 
-module.exports = createIndex;
+module.exports = createPageIndex;

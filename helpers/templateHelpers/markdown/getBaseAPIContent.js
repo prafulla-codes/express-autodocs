@@ -1,7 +1,7 @@
 const getAPIContent = require("./getAPIContent");
 
 function getBaseAPIContent(apis) {
-  let baseAPIContent = `\n## APIs\n---`;
+  let baseAPIContent = `\n# APIs`;
   for (let api of apis) {
     if (!api.isRoute) {
       let apiContent = getAPIContent(api);

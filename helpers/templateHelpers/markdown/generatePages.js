@@ -1,6 +1,7 @@
 const getBaseAPIContent = require("./getBaseAPIContent");
 const createIndex = require("./createIndex");
 const fs = require("fs");
+const createPageIndex = require("./createPageIndex");
 function generatePages(apis) {
   console.log(apis);
   let output_path;
@@ -22,7 +23,7 @@ function generatePages(apis) {
         `📝 Creating ${output_file}`,
         "\x1b[0m"
       );
-      let index = createIndex(api.apis);
+      let index = createPageIndex(api.apis);
       let pageBody = getBaseAPIContent(api.apis);
       let fd = fs.openSync(output_file, "w");
       fs.writeFileSync(
