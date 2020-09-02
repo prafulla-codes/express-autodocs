@@ -7,7 +7,8 @@ if (process.env.NODE_ENV == "production") {
   const routerName = core.getInput("routerName");
   const outputFormat = core.getInput("outputFormat");
   const outputBranch = core.getInput("outputBranch");
-  const token = process.env.GITHUB_TOKEN;
+  const docsTitle = core.getInput("docsTitle");
+  const token = process.env.GITHUB_TOKEN || null;
   console.log("GIthub Token is " + token);
   ExpressAutodocs.generateDocs(
     filePath,
@@ -15,7 +16,8 @@ if (process.env.NODE_ENV == "production") {
     routerName,
     outputFormat,
     outputBranch,
-    token
+    token,
+    docsTitle
   );
 } else {
   ExpressAutodocs.generateDocs(
@@ -23,6 +25,8 @@ if (process.env.NODE_ENV == "production") {
     "app",
     "router",
     "markdown",
-    "express-autodocs"
+    "express-autodocs",
+    null,
+    "Express AutoDocs"
   );
 }

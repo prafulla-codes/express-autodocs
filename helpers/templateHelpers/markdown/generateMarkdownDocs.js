@@ -5,7 +5,7 @@ const exec = util.promisify(require("child_process").exec);
 const fs = require("fs");
 const getBaseAPIContent = require("./getBaseAPIContent");
 const generatePages = require("./generatePages");
-async function generateMarkdowndocs(apis, outputBranch, token) {
+async function generateMarkdowndocs(apis, outputBranch, token, docsTitle) {
   if (process.env.NODE_ENV == "production") {
     console.log(
       "\x1b[36m",
@@ -47,7 +47,7 @@ async function generateMarkdowndocs(apis, outputBranch, token) {
   let baseContent = getBaseAPIContent(apis);
   generatePages(apis);
   const fd = fs.openSync(output_file, "w");
-  let indexPage = ``;
+  let indexPage = `# ${docsTitle}`;
   if (index) indexPage += index;
   if (baseContent) indexPage += baseContent;
   fs.writeFileSync(output_file, indexPage);

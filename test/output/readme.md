@@ -1,5 +1,4 @@
-
-  ---
+# Express AutoDocs
   ## Table of Content
   ### APIs 
 1. [/sayHello](#sayHello) - GET
