@@ -75,5 +75,5 @@ Contributions to this action are most welcomed. please check the [Contributions 
 <a href="https://www.buymeacoffee.com/prafulla98" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" width="45%" ></a>
 
 <a href="https://www.patreon.com/prafulla">
-<img src="https://feministlibrary.co.uk/wp-content/uploads/2016/05/become_a_patron_button@2x.png" width="45%>
+<img src="https://feministlibrary.co.uk/wp-content/uploads/2016/05/become_a_patron_button@2x.png" width="45%">
 </a>
