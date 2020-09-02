@@ -1,13 +1,21 @@
 <center>
 <img src="https://res.cloudinary.com/prafulla98/image/upload/v1598888740/Express%20AutoDocs/ezgif.com-gif-maker_3_ec8j0s.gif" width="100%"/>
+
+<br>
+<br>
+<a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/Contributions-Welcome-green?style=for-the-badge&logo=github&logoColor=white&labelColor=black" alt="Contributions"/></a>
+<img src="https://img.shields.io/github/license/pika1998/express-autodocs?style=for-the-badge&labelColor=black">
+<img src="https://img.shields.io/github/v/release/pika1998/express-autodocs?style=for-the-badge&labelColor=black">
 </center>
 <br>
 
-# Introduction
+# 💡 Introduction
 
-This action scans backend express APIs and automatically generates the documentation on every push.
+This action automatically scans for express APIs in your codebase and generates a documentation website
 
-# How to add to your workflow?
+<br>
+
+# How to add to your workflow ❔
 
 To add this action to your workflow simply modify your workflows **main.yml** file.
 
@@ -40,8 +48,9 @@ jobs:
       - name: Get the output time
         run: echo "The time was ${{ steps.reading-file.outputs.time }}"
 </pre>
+<br>
 
-# Configurations
+# ⚙️ Configurations
 
 Following are the parameters which you can modify to make this action suitable for your codebase.
 
@@ -54,8 +63,16 @@ Following are the parameters which you can modify to make this action suitable f
 | outputFormat    | The format in which assets are deployed                | markdown         |
 | outputBranch    | The branch in which the generated docs are deployed    | express-autodocs |
 
-# Contribute
+<br>
+
+# ⭐ Contribute
 
 Contributions to this action are most welcomed. please check the [Contributions Guide](CONTRIBUTING.md) for more details.
 
-# Sponser This Project
+# 🤗 Sponser This Project
+
+<a href="https://www.buymeacoffee.com/prafulla98" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" width="45%" ></a>
+
+<a href="https://www.patreon.com/prafulla">
+<img src="https://feministlibrary.co.uk/wp-content/uploads/2016/05/become_a_patron_button@2x.png" width="45%>
+</a>
