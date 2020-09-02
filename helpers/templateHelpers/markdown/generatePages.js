@@ -3,7 +3,6 @@ const createIndex = require("./createIndex");
 const fs = require("fs");
 const createPageIndex = require("./createPageIndex");
 function generatePages(apis) {
-  console.log(apis);
   let output_path;
   if (process.env.NODE_ENV == "production") {
     output_path = `${process.cwd()}/docs/pages`;
