@@ -10,7 +10,7 @@
       
 ## APIs
 ---
-### **\/api/items/** - ```GET```
-### **\/api/items/** - ```POST```
-### **\/api/items/:id** - ```DELETE```
+<h2 id="api-items/"> <b>/api/items/</b> - <code>GET</code>
+<h2 id="api-items/"> <b>/api/items/</b> - <code>POST</code>
+<h2 id="api-items/:id"> <b>/api/items/:id</b> - <code>DELETE</code>
       

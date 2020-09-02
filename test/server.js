@@ -26,6 +26,12 @@ app.use("/api/users", require("./routes/api/users"));
 app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/queries", auth, queries);
 app.use("/api/posts", require("./routes/api/posts"));
+/*
+{
+  "description":"Greets you with a hello message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas",
+  "label":"Public"
+}
+*/
 app.get("/sayHello", (req, res) => {
   res.send("Hello");
 });
@@ -34,8 +40,11 @@ if (process.env.NODE_ENV == "production") {
   // Set a static folder
   app.use(express.static("client/build"));
   /*
-    Just a simple API
-  */
+{
+  "description":"Renders the entire application message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas",
+  "label":"Public"
+}
+*/
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
