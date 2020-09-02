@@ -9,7 +9,6 @@ if (process.env.NODE_ENV == "production") {
   const outputBranch = core.getInput("outputBranch");
   const docsTitle = core.getInput("docsTitle");
   const token = process.env.GITHUB_TOKEN || null;
-  console.log("GIthub Token is " + token);
   ExpressAutodocs.generateDocs(
     filePath,
     appName,
