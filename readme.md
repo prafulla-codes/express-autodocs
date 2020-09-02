@@ -16,7 +16,7 @@ This action automatically scans for express APIs in your codebase and generates 
 
 To add this action to your workflow simply modify your workflows **main.yml** file.
 
-<pre>
+```yml
 # This is a basic workflow to help you get started with Express AutoDocs Action
 
 name: Express AutoDocs.
@@ -31,20 +31,21 @@ jobs:
     runs-on: ubuntu-latest
     name: Generating Docs
     steps:
-    # this step checks out the master branch of your repo using checkout action.
-      - name: Checks out the repository 
+      # this step checks out the master branch of your repo using checkout action.
+      - name: Checks out the repository
         id: checksout-repository
         uses: actions/checkout@v2
         with:
           repository: ""
-    # this step generates the docs
+      # this step generates the docs
       - name: Generating Docs.
         id: reading-file
         uses: Pika1998/express-autodocs@v0.0.0-beta.1
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.reading-file.outputs.time }}"
-</pre>
+```
+
 <br>
 
 # ⚙️ Configurations
@@ -61,6 +62,34 @@ Following are the parameters which you can modify to make this action suitable f
 | outputBranch    | The branch in which the generated docs are deployed    | express-autodocs |
 
 <br>
+
+# Describing your APIs
+
+You can easily add description to your APIs using comments in the following way
+
+**Adding API descriptions**
+
+```js
+/*  
+{
+    "description":"Checks for token and gets the logged in user",
+    "inputs":{
+        "x-auth-token":"The JWT Token in header"
+    }
+    "label":"Public",
+    "outputs":{
+        "user":"The user object stored in database",
+    }
+}
+*/
+router.get("/user", auth, (req, res) => {
+  User.findById(req.user.id)
+    .select("-password")
+    .then((user) => {
+      res.json(user);
+    });
+});
+```
 
 # ⏱️ Changelog
 
