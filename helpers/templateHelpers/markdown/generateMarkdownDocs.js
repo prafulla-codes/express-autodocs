@@ -56,7 +56,7 @@ async function generateMarkdowndocs(apis, outputBranch, token, docsTitle) {
     console.log(
       "\x1b[36m",
       "\x1b[1m",
-      `🚀 Deplying to ${outputBranch} ...`,
+      `🚀 Deploying to ${outputBranch} ...`,
       "\x1b[0m"
     );
     const deploy = `
