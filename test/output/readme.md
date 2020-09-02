@@ -16,9 +16,17 @@ Greets you with a hello message lroem epsuafas asfasga awfhafas message lroem ep
 Renders the entire application message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas
 <h2 id="users"> <b>/users</b> - <code>POST</code> - <code>{Private}</code></h2>
 Creates a new user
+<br><br>
 
-  **Inputs**
+**Inputs**
 | Input      | Description |
 | ----------- | ----------- |
 | name | The username by which he/she logs in |
 | password | A string password |
+  <br>
+      
+  **Outputs**
+  | Output      | Description |
+  | ----------- | ----------- |
+| userid | The id of the new user created |
+| error | Error message if any |

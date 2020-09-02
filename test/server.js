@@ -55,6 +55,10 @@ if (process.env.NODE_ENV == "production") {
       "inputs":{
         "name":"The username by which he/she logs in",
         "password": "A string password"
+      },
+      "outputs":{
+        "userid":"The id of the new user created",
+        "error":"Error message if any"
       }
     }
   */
