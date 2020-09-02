@@ -1,12 +1,9 @@
-<center>
 <img src="https://res.cloudinary.com/prafulla98/image/upload/v1598888740/Express%20AutoDocs/ezgif.com-gif-maker_3_ec8j0s.gif" width="100%"/>
-
+<p align="center">
 <br>
 <br>
-<a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/Contributions-Welcome-green?style=for-the-badge&logo=github&logoColor=white&labelColor=black" alt="Contributions"/></a>
-<img src="https://img.shields.io/github/license/pika1998/express-autodocs?style=for-the-badge&labelColor=black">
-<img src="https://img.shields.io/github/v/release/pika1998/express-autodocs?style=for-the-badge&labelColor=black">
-</center>
+<a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/Contributions-Welcome-green?style=for-the-badge&logo=github&logoColor=white&labelColor=black" alt="Contributions"/></a><img src="https://img.shields.io/github/license/pika1998/express-autodocs?style=for-the-badge&labelColor=black"><img src="https://img.shields.io/github/v/release/pika1998/express-autodocs?style=for-the-badge&labelColor=black">
+</p>
 <br>
 
 # 💡 Introduction
