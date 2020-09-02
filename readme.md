@@ -2,7 +2,7 @@
 <p align="center">
 <br>
 <br>
-<a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/Contributions-Welcome-green?style=for-the-badge&logo=github&logoColor=white&labelColor=black" alt="Contributions"/></a><img src="https://img.shields.io/github/license/pika1998/express-autodocs?style=for-the-badge&labelColor=black"><img src="https://img.shields.io/github/v/release/pika1998/express-autodocs?style=for-the-badge&labelColor=black">
+<a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/Contributions-Welcome-green?style=for-the-badge&logo=github&logoColor=white&labelColor=black" alt="Contributions"/></a> <img src="https://img.shields.io/github/license/pika1998/express-autodocs?style=for-the-badge&labelColor=black"> <img src="https://img.shields.io/github/v/release/pika1998/express-autodocs?style=for-the-badge&labelColor=black">
 </p>
 <br>
 
