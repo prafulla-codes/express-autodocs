@@ -65,7 +65,7 @@ Following are the parameters which you can modify to make this action suitable f
 
 # Describing your APIs
 
-You can easily add description to your APIs using comments in the following way
+You can easily add description to your APIs using JSON in comments in the following way
 
 **Adding API descriptions**
 
@@ -75,7 +75,7 @@ You can easily add description to your APIs using comments in the following way
     "description":"Checks for token and gets the logged in user",
     "inputs":{
         "x-auth-token":"The JWT Token in header"
-    }
+    },
     "label":"Public",
     "outputs":{
         "user":"The user object stored in database",
