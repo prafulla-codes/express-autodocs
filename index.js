@@ -23,7 +23,7 @@ if (process.env.NODE_ENV == "production") {
     "test/server.js",
     "app",
     "router",
-    "markdown",
+    "standard",
     "express-autodocs",
     null,
     "Express AutoDocs"

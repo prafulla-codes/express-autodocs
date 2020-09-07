@@ -1,13 +1,14 @@
 function getAPIContent(api) {
+  console.log(api);
   let title = `
 <h2 id="${api.callName.substring(1).replace("/", "-")}"> <b>${
     api.callName
   }</b> - <code>${api.method.toUpperCase()}</code>`;
   let apiMarkdown = `${title}`;
   if (api.params) {
-    if (api.params.label)
+    if (api.params.label) {
       apiMarkdown += ` - <code>{${api.params.label}}</code></h2>`;
-    else {
+    } else {
       apiMarkdown += `</h2>`;
     }
     if (api.params.description) apiMarkdown += `\n${api.params.description}`;
