@@ -1,5 +1,4 @@
 function getAPIContent(api) {
-  console.log(api);
   let title = `
   <div class="api">
   <h2 id="${api.callName

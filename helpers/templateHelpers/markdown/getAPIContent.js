@@ -1,5 +1,4 @@
 function getAPIContent(api) {
-  console.log(api);
   let title = `
 <h2 id="${api.callName.substring(1).replace("/", "-")}"> <b>${
     api.callName

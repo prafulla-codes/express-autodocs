@@ -52,6 +52,12 @@ function getCommentedParams(index, file) {
     params = JSON.parse([...params].reverse().join("").trim());
     return params;
   } catch (err) {
+    console.log(
+      "\x1b[1m",
+      "\x1b[31m",
+      `❌ Make sure the params passed in comments are in proper JSON Format.`,
+      "\x1b[0m"
+    );
     return null;
   }
 }
