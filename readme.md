@@ -40,7 +40,7 @@ jobs:
       # this step generates the docs
       - name: Generating Docs.
         id: reading-file
-        uses: Pika1998/express-autodocs@v0.0.0-beta.1
+        uses: Pika1998/express-autodocs@v0.0.1
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.reading-file.outputs.time }}"
