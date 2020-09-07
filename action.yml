@@ -20,7 +20,7 @@ inputs:
   outputFormat:
     description: "Static assets are generated in this format"
     required: true
-    default: "markdown"
+    default: "standard"
   outputBranch:
     description: "Static assets are deployed in this branch"
     required: true

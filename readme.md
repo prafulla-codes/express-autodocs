@@ -52,14 +52,14 @@ jobs:
 
 Following are the parameters which you can modify to make this action suitable for your codebase.
 
-| Parameters      | Description                                            | Default Value    |
-| --------------- | ------------------------------------------------------ | ---------------- |
-| appName         | The name of the app variable                           | app              |
-| routerName      | The name of the router variable                        | router           |
-| docsTitle       | The title of the documentation page                    | Documentation    |
-| server-filepath | The path of the base index file where APIs are defined | server.js        |
-| outputFormat    | The format in which assets are deployed                | markdown         |
-| outputBranch    | The branch in which the generated docs are deployed    | express-autodocs |
+| Parameters      | Description                                                                                                                         | Default Value    |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| appName         | The name of the app variable                                                                                                        | app              |
+| routerName      | The name of the router variable                                                                                                     | router           |
+| docsTitle       | The title of the documentation page                                                                                                 | Documentation    |
+| server-filepath | The path of the base index file where APIs are defined                                                                              | server.js        |
+| outputFormat    | The format in which assets are deployed <br/> **markdown** - To generate MD files <br/> **standard** - To generate HTML & CSS Files | standard         |
+| outputBranch    | The branch in which the generated docs are deployed                                                                                 | express-autodocs |
 
 <br>
 
@@ -90,6 +90,10 @@ router.get("/user", auth, (req, res) => {
     });
 });
 ```
+
+# 🗃️ Example Output
+
+<img src="https://res.cloudinary.com/prafulla98/image/upload/v1599465979/Express%20AutoDocs/express-autodocs-standard1_dtvoj8.png" width='100%'><img src="https://res.cloudinary.com/prafulla98/image/upload/v1599465979/Express%20AutoDocs/express-autodocs-standard2_owbp3q.png" width='100%'>
 
 # ⏱️ Changelog
 
