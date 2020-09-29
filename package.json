@@ -1,11 +1,11 @@
 {
   "name": "express-autodocs",
-  "version": "0.0.0-beta.v1",
+  "version": "0.0.2-beta.1",
   "description": "A github action which automatically generates documentation for your express APIs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV=development node index.js "
+    "dev": "SET NODE_ENV=development && node index.js "
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Pika1998/express-autodocs#readme",
   "dependencies": {
     "@actions/core": "^1.2.4",
+    "@actions/exec": "^1.0.4",
     "@actions/github": "^4.0.0",
     "@babel/parser": "^7.11.4",
     "@babel/traverse": "^7.11.0",
