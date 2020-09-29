@@ -4,7 +4,7 @@
 
 ## v0.0.2-beta.1
 
-- Fixed Script Issue For Windows ( Thanks To Issue #5 By [@KulkarniSuraj](https://github.com/KulkarniSuraj) )
+- Fixed Script Issue For Windows ( Thanks To Issue [#5](https://github.com/Pika1998/express-autodocs/issues/5) By [@KulkarniSuraj](https://github.com/KulkarniSuraj) )
 
 ## v0.0.1
 
