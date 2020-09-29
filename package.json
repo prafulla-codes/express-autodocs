@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node index.js "
+    "dev": "node -r dotenv/config index.js "
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "@babel/traverse": "^7.11.0",
     "axios": "^0.19.2",
     "cli-badges": "^1.0.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1"
   }
 }
