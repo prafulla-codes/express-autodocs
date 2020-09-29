@@ -1,6 +1,7 @@
 const core = require("@actions/core");
+
 const ExpressAutodocs = require("./ExpressAutodocs");
-process.env.NODE_ENV = process.env.NODE_ENV || "development";
+process.env.NODE_ENV = process.env.NODE_ENV || "production";
 if (process.env.NODE_ENV == "production") {
   const filePath = core.getInput("server-filepath");
   const appName = core.getInput("appName");
