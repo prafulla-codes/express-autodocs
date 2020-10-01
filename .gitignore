@@ -1,0 +1,12 @@
+node_modules
+tmp/**/*
+.idea
+.idea/**/*
+_site
+dist/*.js
+dist/*.map
+coverage/
+*.js.html
+bower.json
+component.json
+yarn.lock

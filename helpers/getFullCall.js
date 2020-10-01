@@ -1,14 +1,14 @@
 function getFullCall(match) {
-  let api = "";
+  let api = '';
   let parenthesisCount = 0;
   let initializedParenthesisCounting = false;
 
   for (let i of match) {
-    if (i == "(") {
+    if (i == '(') {
       parenthesisCount += 1;
       initializedParenthesisCounting = true;
     }
-    if (i == ")") {
+    if (i == ')') {
       parenthesisCount -= 1;
     }
     api = api.concat(i);
