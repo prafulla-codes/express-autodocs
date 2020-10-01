@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Pika1998",
+      "name": "Prafulla Raichurkar",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/36433104?v=4",
+      "profile": "https://prafulla.tech",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "express-autodocs",
+  "projectOwner": "Pika1998",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
