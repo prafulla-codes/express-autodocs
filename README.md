@@ -122,6 +122,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://prafulla.tech"><img src="https://avatars3.githubusercontent.com/u/36433104?v=4" width="100px;" alt=""/><br /><sub><b>Prafulla Raichurkar</b></sub></a><br /><a href="https://github.com/Pika1998/express-autodocs/commits?author=Pika1998" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/syedmuhammadabid/"><img src="https://avatars2.githubusercontent.com/u/19214455?v=4" width="100px;" alt=""/><br /><sub><b>Syed Muhammad Abid</b></sub></a><br /><a href="https://github.com/Pika1998/express-autodocs/commits?author=syedmuhammadabid" title="Code">💻</a></td>
   </tr>
 </table>
 
