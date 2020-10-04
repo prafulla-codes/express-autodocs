@@ -33,6 +33,19 @@
         "test",
         "bug"
       ]
+    },
+    {
+      "login": "rahil1304",
+      "name": "Rahil Sarvaiya",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/32304956?v=4",
+      "profile": "https://github.com/rahil1304",
+      "contributions": [
+        "code",
+        "bug",
+        "ideas",
+        "maintenance",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
