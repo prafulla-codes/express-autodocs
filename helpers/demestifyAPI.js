@@ -73,7 +73,7 @@ function getCommentedParams(index, file) {
     currentIndex -= 1;
   }
   try {
-    let item = [...params].reverse().join('').split('\r');
+    let item = [...params].reverse().join('').split('\n');
     item.forEach(function (param) {
       let temp = param.split('-');
       if (temp.length == 2) {
