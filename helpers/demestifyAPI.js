@@ -14,7 +14,7 @@ function demestifyAPI(api, index, file, routeprefix = '') {
 }
 
 function getCustomParams(index, file) {
-  // Backtraces for an immedeate multi-line comment
+  // Backtraces for an immediate multi-line comment
   let descriptionFound = 'unknown';
   let baseIndex = index;
   let currentIndex = baseIndex;
@@ -40,22 +40,54 @@ function getCustomParams(index, file) {
   }
 }
 
+// function getCommentedParams(index, file) {
+//   let startIndex = index - 3; //  will be the character before '*' character
+//   let currentIndex = startIndex;
+//   let params = '';
+//   while (file.charAt(currentIndex) != '*') {
+//     params = params + file.charAt(currentIndex);
+//     currentIndex -= 1;
+//   }
+//   try {
+//     params = JSON.parse([...params].reverse().join('').trim());
+//     console.log('Params:', params);
+//     return params;
+//   } catch (err) {
+//     console.log(
+//       '\x1b[1m',
+//       '\x1b[31m',
+//       `❌ Make sure the params passed in comments are in proper JSON Format.`,
+//       '\x1b[0m'
+//     );
+//     return null;
+//   }
+// }
+
 function getCommentedParams(index, file) {
   let startIndex = index - 3; //  will be the character before '*' character
   let currentIndex = startIndex;
   let params = '';
-  while (file.charAt(currentIndex) != '*') {
+  let data = {};
+  while (file.charAt(currentIndex) != '/') {
     params = params + file.charAt(currentIndex);
     currentIndex -= 1;
   }
   try {
-    params = JSON.parse([...params].reverse().join('').trim());
-    return params;
+    let item = [...params].reverse().join('').split('\r');
+    item.forEach(function (param) {
+      let temp = param.split('-');
+      if (temp.length == 2) {
+        temp[0] = temp[0].trim();
+        temp[0] = temp[0].substring(temp[0].lastIndexOf(' '));
+        data[temp[0].trim()] = String(temp[1].trim());
+      }
+    });
+    return data;
   } catch (err) {
     console.log(
       '\x1b[1m',
       '\x1b[31m',
-      `❌ Make sure the params passed in comments are in proper JSON Format.`,
+      `❌ Make sure the params passed in comments are in proper JSDoc Format.`,
       '\x1b[0m'
     );
     return null;
