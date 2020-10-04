@@ -16,8 +16,7 @@ function demestifyAPI(api, index, file, routeprefix = '') {
 function getCustomParams(index, file) {
   // Backtraces for an immediate multi-line comment
   let descriptionFound = 'unknown';
-  let baseIndex = index;
-  let currentIndex = baseIndex;
+  let currentIndex = index;
   while (descriptionFound == 'unknown') {
     if (currentIndex != 0) {
       if (
