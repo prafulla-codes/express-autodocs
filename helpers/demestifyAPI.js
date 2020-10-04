@@ -21,7 +21,8 @@ function getCustomParams(index, file) {
     if (currentIndex != 0) {
       if (
         file.charAt(currentIndex - 1) == ' ' ||
-        file.charAt(currentIndex - 1) == '\n'
+        file.charAt(currentIndex - 1) == '\n' ||
+        file.charAt(currentIndex - 1) == '\r'
       ) {
         currentIndex -= 1;
       } else if (file.charAt(currentIndex - 1) == '/') {
