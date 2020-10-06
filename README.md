@@ -70,6 +70,8 @@ You can easily add description to your APIs using JSON in comments in the follow
 
 **Adding API descriptions**
 
+
+> _**Note** : A new format to add API description using JSDoc like syntax is on its way, to use the below mentioned format make sure to use **express-autodocs v0.0.1**_
 ```js
 /*  
 {
