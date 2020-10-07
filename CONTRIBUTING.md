@@ -20,6 +20,10 @@ To run this action in a DEV environment use
 
 <pre> npm run dev </pre>
 
+While running the `dev` script, the input files are located in `test` folder where you will find a demo `server.js` file and `routes`, you can modify these files to test your custom input
+
+Output is generated in `test/output` folder
+
 # First-time Contributors Guide
 
 - You can checkout the [Issues](https://github.com/Pika1998/express-autodocs/issues) and select the one that you like (You can comment on issue to let me know that you're working on it.)
