@@ -6,7 +6,10 @@ If you are contributing to the Open Source for the first time, You can check out
 - [Fork](https://github.com/Pika1998/express-autodocs/fork) the respository.
 - Clone your forked copy of the repository using `git clone https://github.com/${yourUsername}/express-autodocs`
 - `cd express-autodocs`
+- add the upstream repository as this repository using `git remote add upstream https://github.com/Pika1998/express-autodocs`
 - `npm install` to install the dev dependencies.
+
+> Make sure to always pull from upstream before working using `git pull upstream master` to get latest changes and to reduce merge conflicts
 
 # Sending Pull Request
 
