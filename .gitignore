@@ -10,3 +10,4 @@ coverage/
 bower.json
 component.json
 yarn.lock
+test/output/*
