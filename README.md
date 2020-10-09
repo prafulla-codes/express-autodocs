@@ -3,8 +3,8 @@
 <br>
 <br>
 <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/Contributions-Welcome-informational?style=for-the-badge&logo=github&logoColor=white&labelColor=black" alt="Contributions"/></a> <img src="https://img.shields.io/github/license/pika1998/express-autodocs?style=for-the-badge&labelColor=black"> <img src="https://img.shields.io/github/v/release/pika1998/express-autodocs?style=for-the-badge&labelColor=black">
-<img src="https://img.shields.io/static/v1?label=Follow&message=@PRAFULLA98&color=1da1f2&style=for-the-badge&logo=twitter&labelColor=000">
-<a href="https://twitter.com/prafulla98"><img src="https://img.shields.io/github/all-contributors/pika1998/express-autodocs?style=for-the-badge"/></a>
+<a href="https://twitter.com/prafulla98"><img src="https://img.shields.io/static/v1?label=Follow&message=@PRAFULLA98&color=1da1f2&style=for-the-badge&logo=twitter&labelColor=000"></a>
+<img src="https://img.shields.io/github/all-contributors/pika1998/express-autodocs?style=for-the-badge"/>
 </p>
 
 <br>
