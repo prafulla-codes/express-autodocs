@@ -49,8 +49,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write !node_modules",
-      "eslint --fix *"
+      "prettier --write",
+      "git add"
     ]
   }
 }
