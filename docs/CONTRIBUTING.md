@@ -1,4 +1,3 @@
-I
 If you are contributing to the Open Source for the first time, You can check out [First Time Contributors Guide](#first-time-contributors-guide)
 
 # Local Setup
