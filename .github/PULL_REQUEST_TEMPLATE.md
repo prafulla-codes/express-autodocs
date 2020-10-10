@@ -16,7 +16,7 @@ _Put an `x` in the boxes that apply_
 
 _Put an `x` in the boxes that apply. You can also fill these out after creating the PR. This is simply a reminder of what we are going to look for before merging your code._
 
-- [ ] I have read the [CONTRIBUTING](../docs/CONTRIBUTING.md) doc
+- [ ] I have read the [CONTRIBUTING](https://github.com/Pika1998/express-autodocs/docs/CONTRIBUTING.md) doc
 - [ ] Lint and unit tests pass locally with my changes
 - [ ] I have added tests that prove my fix is effective or that my feature works
 - [ ] I have added necessary documentation (if appropriate)
