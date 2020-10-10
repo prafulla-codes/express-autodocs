@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 // Item Model
 
@@ -7,20 +7,20 @@ const router = express.Router();
      @access    Public
     */
 
-router.get("/", (req, res) => {});
+router.get('/', (req, res) => {});
 
 /*   @route     POST api/items
      @desc      Create an Item
      @access    Private
     */
 
-router.post("/", (req, res) => {});
+router.post('/', (req, res) => {});
 
 /*   @route     DELETE api/items
      @desc      Delete an Item
      @access    Private
     */
 
-router.delete("/:id", (req, res) => {});
+router.delete('/:id', (req, res) => {});
 
 module.exports = router;

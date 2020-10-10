@@ -25,7 +25,7 @@ To run this action in a DEV environment use
 
 While running the `dev` script, the input files are located in `test` folder where you will find a demo `server.js` file and `routes`, you can modify these files to test your custom input
 
-Output is generated in `test/output` folder
+Output is generated in `test_repository/output` folder
 
 # First-time Contributors Guide
 

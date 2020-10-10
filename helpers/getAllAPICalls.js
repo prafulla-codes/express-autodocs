@@ -2,7 +2,6 @@ const fs = require('fs');
 const express = require('express');
 const getAPI = require('./getFullCall');
 const { match } = require('assert');
-const { all } = require('../test/routes/api/items');
 const { badge } = require('cli-badges');
 const demestifyAPI = require('./demestifyAPI');
 const getFullCall = require('./getFullCall');
