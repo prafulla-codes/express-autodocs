@@ -43,14 +43,12 @@
     "prettier": "^2.1.2"
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "hooks": {}
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write",
-      "git add"
+      "prettier --write !node_modules",
+      "eslint --fix *"
     ]
   }
 }
