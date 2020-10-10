@@ -1,17 +1,17 @@
-const createIndex = require("./createIndex");
-const core = require("@actions/core");
-const util = require("util");
-const exec = util.promisify(require("child_process").exec);
-const fs = require("fs");
-const getBaseAPIContent = require("./getBaseAPIContent");
-const generatePages = require("./generatePages");
+const createIndex = require('./createIndex');
+const core = require('@actions/core');
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
+const fs = require('fs');
+const getBaseAPIContent = require('./getBaseAPIContent');
+const generatePages = require('./generatePages');
 async function generateMarkdowndocs(apis, outputBranch, token, docsTitle) {
-  if (process.env.NODE_ENV == "production") {
+  if (process.env.NODE_ENV == 'production') {
     console.log(
-      "\x1b[36m",
-      "\x1b[1m",
+      '\x1b[36m',
+      '\x1b[1m',
       `ℹ️ Setting up output branch ${outputBranch} ...`,
-      "\x1b[0m"
+      '\x1b[0m'
     );
 
     const setupFreshBranch = `
@@ -25,39 +25,39 @@ async function generateMarkdowndocs(apis, outputBranch, token, docsTitle) {
       const { stderr } = await exec(setupFreshBranch);
       if (stderr) console.log(stderr);
       console.log(
-        "\x1b[36m",
-        "\x1b[1m",
+        '\x1b[36m',
+        '\x1b[1m',
         `🆗 Branch Setup Successful`,
-        "\x1b[0m"
+        '\x1b[0m'
       );
     } catch (err) {
       core.setFailed(err.message);
     }
   }
   let output_path;
-  if (process.env.NODE_ENV == "production") {
-    output_path = process.cwd() + "/docs";
+  if (process.env.NODE_ENV == 'production') {
+    output_path = process.cwd() + '/docs';
     if (!fs.existsSync(output_path)) fs.mkdirSync(output_path);
   } else {
-    output_path = process.cwd() + "/test/output";
+    output_path = process.cwd() + '/test_repository/output';
     if (!fs.existsSync(output_path)) fs.mkdirSync(output_path);
   }
-  let output_file = output_path + "/readme.md";
+  let output_file = output_path + '/readme.md';
   let index = createIndex(apis);
   let baseContent = getBaseAPIContent(apis);
   generatePages(apis);
-  const fd = fs.openSync(output_file, "w");
+  const fd = fs.openSync(output_file, 'w');
   let indexPage = `# ${docsTitle}`;
   if (index) indexPage += index;
   if (baseContent) indexPage += baseContent;
   fs.writeFileSync(output_file, indexPage);
   fs.closeSync(fd);
-  if (process.env.NODE_ENV == "production") {
+  if (process.env.NODE_ENV == 'production') {
     console.log(
-      "\x1b[36m",
-      "\x1b[1m",
+      '\x1b[36m',
+      '\x1b[1m',
       `🚀 Deploying to ${outputBranch} ...`,
-      "\x1b[0m"
+      '\x1b[0m'
     );
     const deploy = `
     git add docs
@@ -69,10 +69,10 @@ async function generateMarkdowndocs(apis, outputBranch, token, docsTitle) {
       const { stderr } = await exec(deploy);
       if (stderr) console.log(stderr);
       console.log(
-        "\x1b[36m",
-        "\x1b[1m",
+        '\x1b[36m',
+        '\x1b[1m',
         `🎉 Docs created. Checkout ${outputBranch} branch.`,
-        "\x1b[0m"
+        '\x1b[0m'
       );
     } catch (err) {
       core.setFailed(err.message);

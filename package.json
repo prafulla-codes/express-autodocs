@@ -4,7 +4,7 @@
   "description": "A github action which automatically generates documentation for your express APIs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha || true",
     "dev": "node -r dotenv/config index.js ",
     "format": "prettier --write 'helpers/*.js' 'test/*.js'"
   },
