@@ -23,8 +23,25 @@
     "url": "https://github.com/Pika1998/express-autodocs/issues"
   },
   "homepage": "https://github.com/Pika1998/express-autodocs#readme",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^4.0.0",
+    "@babel/parser": "^7.11.4",
+    "@babel/traverse": "^7.11.0",
+    "cli-badges": "^1.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
