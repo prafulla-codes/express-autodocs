@@ -11,3 +11,4 @@ bower.json
 component.json
 yarn.lock
 test/output/*
+.DS_Store
