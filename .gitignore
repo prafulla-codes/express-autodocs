@@ -9,5 +9,4 @@ coverage/
 bower.json
 component.json
 yarn.lock
-test/output/*
-.DS_Store
+test_repository/output/*

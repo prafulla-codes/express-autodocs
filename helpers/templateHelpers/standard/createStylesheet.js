@@ -1,16 +1,16 @@
-const fs = require("fs");
+const fs = require('fs');
 function createStylesheet() {
   let output_file;
   let output_path;
-  if (process.env.NODE_ENV == "production") {
-    output_path = process.cwd() + "/docs";
+  if (process.env.NODE_ENV == 'production') {
+    output_path = process.cwd() + '/docs';
     if (!fs.existsSync(output_path)) fs.mkdirSync(output_path);
   } else {
-    output_path = process.cwd() + "/test/output";
+    output_path = process.cwd() + '/test_repository/output';
     if (!fs.existsSync(output_path)) fs.mkdirSync(output_path);
   }
   output_file = `${output_path}/style.css`;
-  let fd = fs.openSync(output_file, "w");
+  let fd = fs.openSync(output_file, 'w');
   fs.writeFileSync(
     output_file,
     `

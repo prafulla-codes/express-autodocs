@@ -94,4 +94,8 @@ function getCommentedParams(index, file) {
   }
 }
 
-module.exports = demestifyAPI;
+module.exports = {
+  demestifyAPI,
+  getCommentedParams,
+  getCustomParams,
+};
