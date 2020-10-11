@@ -74,12 +74,37 @@ function getCommentedParams(index, file) {
   }
   try {
     let item = [...params].reverse().join('').split('\n');
+    let inputs = {};
+    let outputs = {};
     item.forEach(function (param) {
       let temp = param.split('-');
       if (temp.length == 2) {
         temp[0] = temp[0].trim();
-        temp[0] = temp[0].substring(temp[0].lastIndexOf(' '));
-        data[temp[0].trim()] = String(temp[1].trim());
+        let dataInsideBrackets;
+        if (temp[0].includes('[') && temp[0].includes(']')) {
+          dataInsideBrackets = temp[0].match(/\[([^)]+)\]/)[1];
+        }
+        if (dataInsideBrackets) {
+          if (dataInsideBrackets == 'inputs') {
+            temp[0] = temp[0].substring(temp[0].lastIndexOf(' '));
+            temp[0] = temp[0].trim();
+            temp[1] = temp[1].trim();
+            inputs[temp[0]] = String(temp[1]);
+          } else if (dataInsideBrackets == 'outputs') {
+            temp[0] = temp[0].substring(temp[0].lastIndexOf(' '));
+            temp[0] = temp[0].trim();
+            temp[1] = temp[1].trim();
+            outputs[temp[0]] = String(temp[1]);
+          } else {
+            temp[0] = temp[0].substring(temp[0].lastIndexOf(' '));
+            data[temp[0].trim()] = String(temp[1].trim());
+          }
+          data.inputs = inputs;
+          data.outputs = outputs;
+        } else {
+          temp[0] = temp[0].substring(temp[0].lastIndexOf(' '));
+          data[temp[0].trim()] = String(temp[1].trim());
+        }
       }
     });
     return data;
