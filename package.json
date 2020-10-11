@@ -2,10 +2,10 @@
   "name": "express-autodocs",
   "version": "0.0.2-beta.1",
   "description": "A github action which automatically generates documentation for your express APIs",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node -r dotenv/config index.js ",
+    "dev": "node -r dotenv/config src/index.js ",
     "format": "prettier --write 'helpers/*.js' 'test/*.js'"
   },
   "repository": {
@@ -28,12 +28,11 @@
     "@actions/github": "^4.0.0",
     "@babel/parser": "^7.11.4",
     "@babel/traverse": "^7.11.0",
-    "axios": "^0.19.2",
     "cli-badges": "^1.0.0",
-    "dotenv": "^8.2.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "eslint": "^7.10.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.12.0",
