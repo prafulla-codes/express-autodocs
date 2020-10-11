@@ -46,6 +46,16 @@
         "maintenance",
         "test"
       ]
+    },
+    {
+      "login": "rosborne132",
+      "name": "Robert Osborne",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/20525879?v=4",
+      "profile": "https://github.com/rosborne132",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
