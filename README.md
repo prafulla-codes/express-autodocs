@@ -1,10 +1,10 @@
 <img src="https://res.cloudinary.com/prafulla98/image/upload/v1598888740/Express%20AutoDocs/ezgif.com-gif-maker_3_ec8j0s.gif" width="100%"/>
 <p align="center">
-<br>
-<br>
-<a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/Contributions-Welcome-informational?style=for-the-badge&logo=github&logoColor=white&labelColor=black" alt="Contributions"/></a> <img src="https://img.shields.io/github/license/pika1998/express-autodocs?style=for-the-badge&labelColor=black"> <img src="https://img.shields.io/github/v/release/pika1998/express-autodocs?style=for-the-badge&labelColor=black">
-<a href="https://twitter.com/prafulla98"><img src="https://img.shields.io/static/v1?label=Follow&message=@PRAFULLA98&color=1da1f2&style=for-the-badge&logo=twitter&labelColor=000"></a>
-<img src="https://img.shields.io/github/all-contributors/pika1998/express-autodocs?style=for-the-badge"/>
+  <br>
+  <br>
+  <a href="docs/CONTRIBUTING.md"><img src="https://img.shields.io/badge/Contributions-Welcome-informational?style=for-the-badge&logo=github&logoColor=white&labelColor=black" alt="Contributions"/></a> <img src="https://img.shields.io/github/license/pika1998/express-autodocs?style=for-the-badge&labelColor=black"> <img src="https://img.shields.io/github/v/release/pika1998/express-autodocs?style=for-the-badge&labelColor=black">
+  <a href="https://twitter.com/prafulla98"><img src="https://img.shields.io/static/v1?label=Follow&message=@PRAFULLA98&color=1da1f2&style=for-the-badge&logo=twitter&labelColor=000"></a>
+  <img src="https://img.shields.io/github/all-contributors/pika1998/express-autodocs?style=for-the-badge"/>
 </p>
 
 <br>
@@ -102,18 +102,18 @@ router.get("/user", auth, (req, res) => {
 
 # ⏱️ Changelog
 
-Check the [CHANGELOG.md](CHANGELOG.md) to view the changes done to this action over time
+Check the [CHANGELOG](docs/CHANGELOG.md) to view the changes done to this action over time
 
 # ⭐ Contribute
 
-Contributions to this action are most welcomed. please check the [Contributions Guide](CONTRIBUTING.md) for more details.
+Contributions to this action are most welcomed. please check the [Contributions Guide](docs/CONTRIBUTING.md) for more details.
 
 # 🤗 Sponser This Project
 
 <a href="https://www.buymeacoffee.com/prafulla98" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" width="45%" ></a>
 
 <a href="https://www.patreon.com/prafulla">
-<img src="https://feministlibrary.co.uk/wp-content/uploads/2016/05/become_a_patron_button@2x.png" width="45%">
+  <img src="https://feministlibrary.co.uk/wp-content/uploads/2016/05/become_a_patron_button@2x.png" width="45%">
 </a>
 
 ## Contributors ✨

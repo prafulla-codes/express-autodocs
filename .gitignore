@@ -1,4 +1,3 @@
-node_modules
 tmp/**/*
 .idea
 .idea/**/*
@@ -11,3 +10,4 @@ bower.json
 component.json
 yarn.lock
 test/output/*
+.DS_Store
