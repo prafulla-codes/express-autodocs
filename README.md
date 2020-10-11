@@ -1,10 +1,10 @@
 <img src="https://res.cloudinary.com/prafulla98/image/upload/v1598888740/Express%20AutoDocs/ezgif.com-gif-maker_3_ec8j0s.gif" width="100%"/>
 <p align="center">
-<br>
-<br>
-<a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/Contributions-Welcome-informational?style=for-the-badge&logo=github&logoColor=white&labelColor=black" alt="Contributions"/></a> <img src="https://img.shields.io/github/license/pika1998/express-autodocs?style=for-the-badge&labelColor=black"> <img src="https://img.shields.io/github/v/release/pika1998/express-autodocs?style=for-the-badge&labelColor=black">
-<a href="https://twitter.com/prafulla98"><img src="https://img.shields.io/static/v1?label=Follow&message=@PRAFULLA98&color=1da1f2&style=for-the-badge&logo=twitter&labelColor=000"></a>
-<img src="https://img.shields.io/github/all-contributors/pika1998/express-autodocs?style=for-the-badge"/>
+  <br>
+  <br>
+  <a href="docs/CONTRIBUTING.md"><img src="https://img.shields.io/badge/Contributions-Welcome-informational?style=for-the-badge&logo=github&logoColor=white&labelColor=black" alt="Contributions"/></a> <img src="https://img.shields.io/github/license/pika1998/express-autodocs?style=for-the-badge&labelColor=black"> <img src="https://img.shields.io/github/v/release/pika1998/express-autodocs?style=for-the-badge&labelColor=black">
+  <a href="https://twitter.com/prafulla98"><img src="https://img.shields.io/static/v1?label=Follow&message=@PRAFULLA98&color=1da1f2&style=for-the-badge&logo=twitter&labelColor=000"></a>
+  <img src="https://img.shields.io/github/all-contributors/pika1998/express-autodocs?style=for-the-badge"/>
 </p>
 
 <br>
@@ -102,18 +102,18 @@ router.get("/user", auth, (req, res) => {
 
 # ⏱️ Changelog
 
-Check the [CHANGELOG.md](CHANGELOG.md) to view the changes done to this action over time
+Check the [CHANGELOG](docs/CHANGELOG.md) to view the changes done to this action over time
 
 # ⭐ Contribute
 
-Contributions to this action are most welcomed. please check the [Contributions Guide](CONTRIBUTING.md) for more details.
+Contributions to this action are most welcomed. please check the [Contributions Guide](docs/CONTRIBUTING.md) for more details.
 
 # 🤗 Sponser This Project
 
 <a href="https://www.buymeacoffee.com/prafulla98" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" width="45%" ></a>
 
 <a href="https://www.patreon.com/prafulla">
-<img src="https://feministlibrary.co.uk/wp-content/uploads/2016/05/become_a_patron_button@2x.png" width="45%">
+  <img src="https://feministlibrary.co.uk/wp-content/uploads/2016/05/become_a_patron_button@2x.png" width="45%">
 </a>
 
 ## Contributors ✨
@@ -129,6 +129,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.linkedin.com/in/syedmuhammadabid/"><img src="https://avatars2.githubusercontent.com/u/19214455?v=4" width="100px;" alt=""/><br /><sub><b>Syed Muhammad Abid</b></sub></a><br /><a href="https://github.com/Pika1998/express-autodocs/commits?author=syedmuhammadabid" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/KulkarniSuraj"><img src="https://avatars2.githubusercontent.com/u/30728951?v=4" width="100px;" alt=""/><br /><sub><b>Suraj Kulkarni</b></sub></a><br /><a href="https://github.com/Pika1998/express-autodocs/commits?author=KulkarniSuraj" title="Code">💻</a> <a href="https://github.com/Pika1998/express-autodocs/commits?author=KulkarniSuraj" title="Tests">⚠️</a> <a href="https://github.com/Pika1998/express-autodocs/issues?q=author%3AKulkarniSuraj" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/rahil1304"><img src="https://avatars0.githubusercontent.com/u/32304956?v=4" width="100px;" alt=""/><br /><sub><b>Rahil Sarvaiya</b></sub></a><br /><a href="https://github.com/Pika1998/express-autodocs/commits?author=rahil1304" title="Code">💻</a> <a href="https://github.com/Pika1998/express-autodocs/issues?q=author%3Arahil1304" title="Bug reports">🐛</a> <a href="#ideas-rahil1304" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-rahil1304" title="Maintenance">🚧</a> <a href="https://github.com/Pika1998/express-autodocs/commits?author=rahil1304" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/rosborne132"><img src="https://avatars3.githubusercontent.com/u/20525879?v=4" width="100px;" alt=""/><br /><sub><b>Robert Osborne</b></sub></a><br /><a href="https://github.com/Pika1998/express-autodocs/commits?author=rosborne132" title="Code">💻</a> <a href="https://github.com/Pika1998/express-autodocs/commits?author=rosborne132" title="Documentation">📖</a></td>
   </tr>
 </table>
 
