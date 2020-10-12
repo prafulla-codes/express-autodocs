@@ -1,32 +1,7 @@
-const vm = require('vm');
-const fs = require('fs');
-const path = require('path');
 const getFileFromRequire = require('./getFileHelpers/getFileFromRequire');
 const getFileFromVariableRoute = require('./getFileHelpers/getFileFromVariableRoute');
 const getFullCall = require('./getFullCall');
 const demestifyAPI = require('./demestifyAPI');
-
-function getCallsFromRoute(route, basefile, basefilePath, routername) {
-  // Gets The Route File
-  const routeFile = getRouteFile(route, basefile, basefilePath);
-  const apis = [];
-  if (!routeFile) return null;
-  let match;
-  const routeAPIMatchStartPositions = [];
-  const routeLevelAPIRegexString = `${routername}.(get|post|delete|patch|put).*`;
-  const routeLevelAPIRegex = new RegExp(routeLevelAPIRegexString, 'g');
-  const routeName = getRouteName(route);
-  while ((match = routeLevelAPIRegex.exec(routeFile))) {
-    routeAPIMatchStartPositions.push(match.index);
-  }
-  for (const index of routeAPIMatchStartPositions) {
-    const api = getFullCall(routeFile.substr(index));
-    const demestified_api = demestifyAPI(api, index, routeFile, routeName);
-    apis.push(demestified_api);
-  }
-
-  return { isRoute: true, apis, routeName };
-}
 
 function getRouteName(route) {
   let routeName = route.split(',')[0].split('(')[1];
@@ -45,6 +20,29 @@ function getRouteFile(route, basefile, filePath) {
   }
   const file = getFileFromVariableRoute(lastParam.trim(), basefile, filePath);
   return file;
+}
+
+function getCallsFromRoute(route, basefile, basefilePath, routername) {
+  // Gets The Route File
+  const routeFile = getRouteFile(route, basefile, basefilePath);
+  const apis = [];
+  if (!routeFile) return null;
+  let match;
+  const routeAPIMatchStartPositions = [];
+  const routeLevelAPIRegexString = `${routername}.(get|post|delete|patch|put).*`;
+  const routeLevelAPIRegex = new RegExp(routeLevelAPIRegexString, 'g');
+  const routeName = getRouteName(route);
+  while ((match = routeLevelAPIRegex.exec(routeFile))) {
+    routeAPIMatchStartPositions.push(match.index);
+  }
+
+  routeAPIMatchStartPositions.forEach((index) => {
+    const api = getFullCall(routeFile.substr(index));
+    const demestified_api = demestifyAPI(api, index, routeFile, routeName);
+    apis.push(demestified_api);
+  });
+
+  return { isRoute: true, apis, routeName };
 }
 
 module.exports = getCallsFromRoute;
