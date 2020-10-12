@@ -75,18 +75,12 @@ You can easily add description to your APIs using JSON in comments in the follow
 
 > _**Note** : A new format to add API description using JSDoc like syntax is on its way, to use the below mentioned format make sure to use **express-autodocs v0.0.1**_
 ```js
-/*  
-{
-    "description":"Checks for token and gets the logged in user",
-    "inputs":{
-        "x-auth-token":"The JWT Token in header"
-    },
-    "label":"Public",
-    "outputs":{
-        "user":"The user object stored in database",
-    }
-}
-*/
+
+/**
+ * @param {string} description - Get a user from database
+ * @param {string} [inputs] id - The user id.
+ * @param {string} [outputs] user- A user JSON Object.
+ */
 router.get("/user", auth, (req, res) => {
   User.findById(req.user.id)
     .select("-password")
@@ -95,6 +89,7 @@ router.get("/user", auth, (req, res) => {
     });
 });
 ```
+
 
 # 🗃️ Example Output
 
