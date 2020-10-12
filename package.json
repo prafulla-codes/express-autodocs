@@ -53,7 +53,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "pretty-quick --staged",
+      "pretty-quick --staged --write",
       "git add"
     ]
   }
