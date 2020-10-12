@@ -8,22 +8,24 @@ const demestifyAPI = require('./demestifyAPI');
 
 function getCallsFromRoute(route, basefile, basefilePath, routername) {
   // Gets The Route File
-  let routeFile = getRouteFile(route, basefile, basefilePath);
-  let apis = [];
+  const routeFile = getRouteFile(route, basefile, basefilePath);
+  const apis = [];
   if (!routeFile) return null;
-  let match,
-    routeAPIMatchStartPositions = [];
+  let match;
+  const routeAPIMatchStartPositions = [];
   const routeLevelAPIRegexString = `${routername}.(get|post|delete|patch|put).*`;
   const routeLevelAPIRegex = new RegExp(routeLevelAPIRegexString, 'g');
-  let routeName = getRouteName(route);
-  while ((match = routeLevelAPIRegex.exec(routeFile)))
+  const routeName = getRouteName(route);
+  while ((match = routeLevelAPIRegex.exec(routeFile))) {
     routeAPIMatchStartPositions.push(match.index);
-  for (let index of routeAPIMatchStartPositions) {
-    let api = getFullCall(routeFile.substr(index));
-    let demestified_api = demestifyAPI(api, index, routeFile, routeName);
+  }
+  for (const index of routeAPIMatchStartPositions) {
+    const api = getFullCall(routeFile.substr(index));
+    const demestified_api = demestifyAPI(api, index, routeFile, routeName);
     apis.push(demestified_api);
   }
-  return { isRoute: true, apis: apis, routeName: routeName };
+
+  return { isRoute: true, apis, routeName };
 }
 
 function getRouteName(route) {
@@ -33,18 +35,16 @@ function getRouteName(route) {
 }
 
 function getRouteFile(route, basefile, filePath) {
-  let mainContent = route.split('.')[1].split('(')[0];
   let trimmedRoute = route.match(/\(.[\s\S]*/g)[0];
   trimmedRoute = trimmedRoute.substring(1, trimmedRoute.length - 1);
-  let routeParams = [...trimmedRoute.split(',')];
-  let lastParam = routeParams[routeParams.length - 1];
+  const routeParams = [...trimmedRoute.split(',')];
+  const lastParam = routeParams[routeParams.length - 1];
   if (lastParam.includes('require')) {
-    let file = getFileFromRequire(lastParam.trim(), filePath);
-    return file;
-  } else {
-    let file = getFileFromVariableRoute(lastParam.trim(), basefile, filePath);
+    const file = getFileFromRequire(lastParam.trim(), filePath);
     return file;
   }
+  const file = getFileFromVariableRoute(lastParam.trim(), basefile, filePath);
+  return file;
 }
 
 module.exports = getCallsFromRoute;

@@ -1,11 +1,12 @@
 const vm = require('vm');
+
 function demestifyAPI(api, index, file, routeprefix = '') {
-  let METHOD = api.split('.')[1].split('(')[0];
+  const METHOD = api.split('.')[1].split('(')[0];
   let trimmedCall = api.match(/\(.[\s\S]*/g)[0];
   trimmedCall = trimmedCall.substring(1, trimmedCall.length - 1);
   let CALL = trimmedCall.split(',')[0];
   CALL = CALL.substring(1, CALL.length - 1);
-  let params = getCustomParams(index, file);
+  const params = getCustomParams(index, file);
   return {
     method: METHOD,
     callName: routeprefix + CALL,
@@ -34,10 +35,9 @@ function getCustomParams(index, file) {
   }
   if (descriptionFound) {
     return getCommentedParams(currentIndex, file);
-  } else {
-    // If no description is present then return null;
-    return null;
   }
+  // If no description is present then return null;
+  return null;
 }
 
 // function getCommentedParams(index, file) {
@@ -64,20 +64,20 @@ function getCustomParams(index, file) {
 // }
 
 function getCommentedParams(index, file) {
-  let startIndex = index - 3; //  will be the character before '*' character
+  const startIndex = index - 3; //  will be the character before '*' character
   let currentIndex = startIndex;
   let params = '';
-  let data = {};
+  const data = {};
   while (file.charAt(currentIndex) != '/') {
-    params = params + file.charAt(currentIndex);
+    params += file.charAt(currentIndex);
     currentIndex -= 1;
   }
   try {
-    let item = [...params].reverse().join('').split('\n');
-    let inputs = {};
-    let outputs = {};
-    item.forEach(function (param) {
-      let temp = param.split('-');
+    const item = [...params].reverse().join('').split('\n');
+    const inputs = {};
+    const outputs = {};
+    item.forEach((param) => {
+      const temp = param.split('-');
       if (temp.length == 2) {
         temp[0] = temp[0].trim();
         let dataInsideBrackets;
@@ -112,7 +112,7 @@ function getCommentedParams(index, file) {
     console.log(
       '\x1b[1m',
       '\x1b[31m',
-      `❌ Make sure the params passed in comments are in proper JSDoc Format.`,
+      '❌ Make sure the params passed in comments are in proper JSDoc Format.',
       '\x1b[0m'
     );
     return null;
