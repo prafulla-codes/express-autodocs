@@ -4,9 +4,9 @@
   "description": "A github action which automatically generates documentation for your express APIs",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha || true",
-    "dev": "node -r dotenv/config src/index.js && serve dist/output",
-    "format": "prettier --write 'helpers/*.js' 'test/*.js'"
+    "dev": "node -r dotenv/config src/index.js && serve test_repository/output",
+    "format": "prettier --write 'helpers/*.js' 'test/*.js'",
+    "test": "mocha || true"
   },
   "repository": {
     "type": "git",
