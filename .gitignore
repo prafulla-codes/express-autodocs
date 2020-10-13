@@ -6,8 +6,7 @@ _site
 bower.json
 component.json
 coverage/
-dist/*.js
-dist/*.map
+dist
 test_repository/output/*
 tmp/**/*
 yarn.lock
