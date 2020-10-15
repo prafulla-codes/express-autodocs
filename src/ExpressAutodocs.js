@@ -8,7 +8,6 @@ class ExpressAutodocs {
     routername,
     outputFormat,
     outputBranch,
-    token = null,
     docsTitle
   ) {
     try {
@@ -20,7 +19,7 @@ class ExpressAutodocs {
       );
       const apis = getAllAPICalls(filepath, appname, routername);
       console.log('\x1b[36m', '\x1b[1m', '✨ Creating Docss ...', '\x1b[0m');
-      createDocs(apis, outputFormat, outputBranch, token, docsTitle);
+      createDocs(apis, outputFormat, outputBranch, docsTitle);
     } catch (err) {
       console.log(err);
     }

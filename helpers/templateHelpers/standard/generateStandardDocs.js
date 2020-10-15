@@ -6,7 +6,7 @@ const fs = require('fs');
 const getBaseAPIContent = require('./getBaseAPIContent');
 const generatePages = require('./generatePages');
 const createStylesheet = require('./createStylesheet');
-async function generateStandardDocs(apis, outputBranch, token, docsTitle) {
+async function generateStandardDocs(apis, outputBranch, docsTitle) {
   if (process.env.NODE_ENV == 'production') {
     console.log(
       '\x1b[36m',

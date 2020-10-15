@@ -5,7 +5,7 @@ const exec = util.promisify(require('child_process').exec);
 const fs = require('fs');
 const getBaseAPIContent = require('./getBaseAPIContent');
 const generatePages = require('./generatePages');
-async function generateMarkdowndocs(apis, outputBranch, token, docsTitle) {
+async function generateMarkdowndocs(apis, outputBranch, docsTitle) {
   if (process.env.NODE_ENV == 'production') {
     console.log(
       '\x1b[36m',

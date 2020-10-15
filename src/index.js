@@ -10,14 +10,12 @@ if (process.env.NODE_ENV === 'production') {
   const outputFormat = core.getInput('outputFormat');
   const outputBranch = core.getInput('outputBranch');
   const docsTitle = core.getInput('docsTitle');
-  const token = process.env.GITHUB_TOKEN || null;
   ExpressAutodocs.generateDocs(
     filePath,
     appName,
     routerName,
     outputFormat,
     outputBranch,
-    token,
     docsTitle
   );
 } else {
@@ -27,7 +25,6 @@ if (process.env.NODE_ENV === 'production') {
     'router',
     'standard',
     'express-autodocs',
-    null,
     'Express AutoDocs'
   );
 }
