@@ -1,36 +1,36 @@
-name: "Express AutoDocs"
-description: "A github action which automatically generates documentation for your express APIs"
+name: 'Express AutoDocs'
+description: 'A github action which automatically generates documentation for your express APIs'
 inputs:
   docsTitle: # title of the docs
-    description: "The title of the docs created"
+    description: 'The title of the docs created'
     required: true
-    default: "Documentation"
+    default: 'Documentation'
   server-filepath: # id of input
-    description: "The path of the file where backend server runs."
+    description: 'The path of the file where backend server runs.'
     required: true
-    default: "server.js"
+    default: 'server.js'
   appName:
-    description: "Name of the app variable"
+    description: 'Name of the app variable'
     required: true
-    default: "app"
+    default: 'app'
   routerName:
-    description: "Name of the router variable"
+    description: 'Name of the router variable'
     required: true
-    default: "router"
+    default: 'router'
   outputFormat:
-    description: "Static assets are generated in this format"
+    description: 'Static assets are generated in this format'
     required: true
-    default: "standard"
+    default: 'standard'
   outputBranch:
-    description: "Static assets are deployed in this branch"
+    description: 'Static assets are deployed in this branch'
     required: true
-    default: "express-autodocs"
+    default: 'express-autodocs'
 outputs:
   time: # id of output
-    description: "The time the action completed"
+    description: 'The time the action completed'
 runs:
-  using: "node12"
-  main: "src/index.js"
+  using: 'node12'
+  main: 'src/index.js'
 branding:
-  icon: "book-open"
-  color: "blue"
+  icon: 'book-open'
+  color: 'blue'
