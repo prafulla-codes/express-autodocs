@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === 'production') {
   );
 } else {
   ExpressAutodocs.generateDocs(
-    'test_repository/server.js',
+    'test_output/server.js',
     'app',
     'router',
     'standard',
