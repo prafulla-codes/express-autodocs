@@ -7,7 +7,7 @@ function generatePages(apis) {
   if (process.env.NODE_ENV == 'production') {
     output_path = `${process.cwd()}/docs/pages`;
   } else {
-    output_path = `${process.cwd()}/test_repository/output/pages`;
+    output_path = `${process.cwd()}/test_output/output/pages`;
   }
 
   if (!fs.existsSync(output_path)) fs.mkdirSync(output_path); // Create Pages Folder If Does Not Exists

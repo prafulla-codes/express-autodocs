@@ -7,6 +7,6 @@ bower.json
 component.json
 coverage/
 dist
-test_repository/output/*
+test_output/output/*
 tmp/**/*
 yarn.lock

@@ -15,6 +15,12 @@ This action automatically scans for express APIs in your codebase and generates 
 
 <br>
 
+# Whats New?
+
+- Added JSDOC Like Syntax to define APIs (Thanks to [@rahil1304](https://github.com/rahil1304))
+- Refactored Code & Reduced Bugs (Thanks to [@rosborne132](https://github.com/rosborne132) & [@KulkarniSuraj](https://github.com/KulkarniSuraj))
+- Added Unit Tests
+
 # How to add to your workflow ❔
 
 To add this action to your workflow simply modify your workflows **main.yml** file.
@@ -39,7 +45,7 @@ jobs:
         id: checksout-repository
         uses: actions/checkout@v2
         with:
-          repository: ""
+          repository: ''
       # this step generates the docs
       - name: Generating Docs.
         id: reading-file
@@ -72,24 +78,20 @@ You can easily add description to your APIs using JSON in comments in the follow
 
 **Adding API descriptions**
 
-
-> _**Note** : A new format to add API description using JSDoc like syntax is on its way, to use the below mentioned format make sure to use **express-autodocs v0.0.1**_
 ```js
-
 /**
  * @param {string} description - Get a user from database
  * @param {string} [inputs] id - The user id.
  * @param {string} [outputs] user- A user JSON Object.
  */
-router.get("/user", auth, (req, res) => {
+router.get('/user', auth, (req, res) => {
   User.findById(req.user.id)
-    .select("-password")
+    .select('-password')
     .then((user) => {
       res.json(user);
     });
 });
 ```
-
 
 # 🗃️ Example Output
 
@@ -130,6 +132,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

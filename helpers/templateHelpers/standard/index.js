@@ -40,7 +40,7 @@ async function generateStandardDocs(apis, outputBranch, docsTitle) {
     output_path = process.cwd() + '/docs';
     if (!fs.existsSync(output_path)) fs.mkdirSync(output_path);
   } else {
-    output_path = process.cwd() + '/test_repository/output';
+    output_path = process.cwd() + '/test_output/output';
     if (!fs.existsSync(output_path)) fs.mkdirSync(output_path);
   }
   createStylesheet();
