@@ -28,7 +28,7 @@ function createIndex(apis) {
   <div class="index">
   ${baseAPIs}
   <br/>
-  ${hasRoutes ? pages : null}
+  ${hasRoutes ? pages : ''}
   </div>`;
 }
 

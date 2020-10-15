@@ -25,7 +25,7 @@ ${baseAPICount}. [${api.callName}](#${api.callName
   return `
   ## Table of Content
   ${baseAPIs}
-  ${hasRoutes ? pages : null}
+  ${hasRoutes ? pages : ''}
   ---`;
 }
 
