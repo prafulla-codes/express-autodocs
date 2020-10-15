@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "node -r dotenv/config src/index.js && serve test_output/output",
     "format": "prettier --write 'helpers/*.js' 'test/*.js'",
-    "test": "mocha || true"
+    "test": "mocha || true",
+    "prettier-format": "prettier --config .prettierrc '*.js' --write",
+    "lint": "eslint . --ext .ts .js"
   },
   "repository": {
     "type": "git",
@@ -48,7 +50,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npm run prettier-format && npm run lint"
     }
   },
   "lint-staged": {
