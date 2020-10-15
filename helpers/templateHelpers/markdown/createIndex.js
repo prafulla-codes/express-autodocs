@@ -11,14 +11,14 @@ function createIndex(apis) {
       pages += `
   ${pagesCount}. [${api.routeName}](pages/${api.routeName
         .substring(1)
-        .replace("/", "-")}.md)
+        .replace('/', '-')}.md)
   `;
     } else {
       baseAPICount += 1;
       baseAPIs += `
 ${baseAPICount}. [${api.callName}](#${api.callName
         .substring(1)
-        .replace("/", "-")}) - ${api.method.toUpperCase()}`;
+        .replace('/', '-')}) - ${api.method.toUpperCase()}`;
     }
   }
 

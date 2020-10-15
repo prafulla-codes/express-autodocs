@@ -1,4 +1,4 @@
-const getAPIContent = require("./getAPIContent");
+const getAPIContent = require('./getAPIContent');
 
 function getBaseAPIContent(apis) {
   let baseAPIContent = `
@@ -10,7 +10,7 @@ function getBaseAPIContent(apis) {
       baseAPIContent += `${apiContent}`;
     }
   }
-  baseAPIContent += "</div>";
+  baseAPIContent += '</div>';
   return baseAPIContent;
 }
 module.exports = getBaseAPIContent;

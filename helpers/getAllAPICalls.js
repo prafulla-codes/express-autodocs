@@ -41,7 +41,7 @@ function getAllAPICalls(filepath, appname, routername) {
     messageBg: 'green',
     messageColor: 'black',
     labelColor: 'black',
-    labelBg: 'white',
+    labelBg: 'white'
   });
 
   logSuccess('Scan Complete', successBadge);
@@ -62,7 +62,7 @@ function getAllAPICalls(filepath, appname, routername) {
       messageBg: 'green',
       messageColor: 'black',
       labelColor: 'black',
-      labelBg: 'white',
+      labelBg: 'white'
     }
   );
 

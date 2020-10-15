@@ -55,7 +55,7 @@
     "*.js": [
       "pretty-quick --staged --write",
       "prettier --write .",
-      "eslint --fix",
+      "eslint . --fix",
       "git add ."
     ]
   }

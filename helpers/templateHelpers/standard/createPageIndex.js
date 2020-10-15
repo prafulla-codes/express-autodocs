@@ -9,7 +9,7 @@ function createPageIndex(apis) {
       hasRoutes = true;
       pagesCount += 1;
       pages += `
-      <a href="pages/${api.routeName.substring(1).replace("/", "-")}.html"> ${
+      <a href="pages/${api.routeName.substring(1).replace('/', '-')}.html"> ${
         api.routeName
       } </a>
         <br/>
@@ -17,7 +17,7 @@ function createPageIndex(apis) {
     } else {
       baseAPICount += 1;
       baseAPIs += `
-      <a href="#${api.callName.substring(1).replace("/", "-")}.html"> ${
+      <a href="#${api.callName.substring(1).replace('/', '-')}.html"> ${
         api.callName
       } </a>
         <br/>
@@ -29,7 +29,7 @@ function createPageIndex(apis) {
     <div class="index">
     <h2> APIs </h2><br/>
     ${baseAPIs}
-    ${hasRoutes ? `<br/>${pages}` : ""}
+    ${hasRoutes ? `<br/>${pages}` : ''}
     </div> `;
 }
 
