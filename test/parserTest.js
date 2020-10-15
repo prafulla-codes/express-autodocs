@@ -2,7 +2,7 @@ const assert = require('chai').assert;
 const getCommentedParams = require('../helpers/demestifyAPI')
   .getCommentedParams;
 
-let testApiDefinition = `
+const testApiDefinition = `
 /**
  * Represents a book.
  * @constructor
