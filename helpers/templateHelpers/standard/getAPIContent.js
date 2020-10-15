@@ -3,7 +3,7 @@ function getAPIContent(api) {
   <div class="api">
   <h2 id="${api.callName
     .substring(1)
-    .replace("/", "-")}"> <span class="title">${
+    .replace('/', '-')}"> <span class="title">${
     api.callName
   }</span> - <span class="method">${api.method.toUpperCase()}</span>`;
   let apiStandard = `${title}`;
@@ -28,7 +28,7 @@ ${inputTable}`;
       ${outputTable}`;
     }
   }
-  apiStandard += "</div>";
+  apiStandard += '</div>';
   return apiStandard;
 }
 
@@ -47,7 +47,7 @@ function getInputTable(inputs) {
     </tr>
     `;
   }
-  inputTable += "</table>";
+  inputTable += '</table>';
   return inputTable;
 }
 function getOutputTable(outputs) {
@@ -66,7 +66,7 @@ function getOutputTable(outputs) {
     </tr>
    `;
   }
-  outputTable += "</table>";
+  outputTable += '</table>';
   return outputTable;
 }
 module.exports = getAPIContent;

@@ -9,14 +9,14 @@ function createIndex(apis) {
       hasRoutes = true;
       pagesCount += 1;
       pages += `
-      <a href="pages/${api.routeName.substring(1).replace("/", "-")}.html ">
+      <a href="pages/${api.routeName.substring(1).replace('/', '-')}.html ">
          ${api.routeName}</a>
         <br/>
       `;
     } else {
       baseAPICount += 1;
       baseAPIs += `
-      <a href="#${api.callName.substring(1).replace("/", "-")}"> ${
+      <a href="#${api.callName.substring(1).replace('/', '-')}"> ${
         api.callName
       }</a>
         <br/>

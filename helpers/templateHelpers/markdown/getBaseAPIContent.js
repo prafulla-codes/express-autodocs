@@ -1,4 +1,4 @@
-const getAPIContent = require("./getAPIContent");
+const getAPIContent = require('./getAPIContent');
 
 function getBaseAPIContent(apis) {
   let baseAPIContent = `\n# APIs`;

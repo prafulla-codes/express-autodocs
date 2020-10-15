@@ -10,7 +10,7 @@ function demestifyAPI(api, index, file, routeprefix = '') {
   return {
     method: METHOD,
     callName: routeprefix + CALL,
-    params,
+    params
   };
 }
 
@@ -122,5 +122,5 @@ function getCommentedParams(index, file) {
 module.exports = {
   demestifyAPI,
   getCommentedParams,
-  getCustomParams,
+  getCustomParams
 };

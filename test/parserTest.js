@@ -23,12 +23,12 @@ describe('🔄 JSDOC Parser Test', function () {
         author: 'The author of the book.',
         inputs: {
           name: 'The name of the user.',
-          password: 'The password of the user.',
+          password: 'The password of the user.'
         },
         outputs: {
           userid: 'The id of the new user created.',
-          error: 'Error message if any.',
-        },
+          error: 'Error message if any.'
+        }
       }
     );
   });

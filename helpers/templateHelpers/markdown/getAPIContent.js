@@ -1,6 +1,6 @@
 function getAPIContent(api) {
   let title = `
-<h2 id="${api.callName.substring(1).replace("/", "-")}"> <b>${
+<h2 id="${api.callName.substring(1).replace('/', '-')}"> <b>${
     api.callName
   }</b> - <code>${api.method.toUpperCase()}</code>`;
   let apiMarkdown = `${title}`;
