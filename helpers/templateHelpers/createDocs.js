@@ -1,5 +1,5 @@
-const generateMarkdowndocs = require('./markdown/generateMarkdownDocs');
-const generateStandardDocs = require('./standard/generateStandardDocs');
+const generateMarkdowndocs = require('./markdown')
+const generateStandardDocs = require('./standard');
 
 function createDocs(apis, outputFormat, outputBranch, docsTitle) {
   switch (outputFormat) {
